@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 500" width="1200" height="500" role="img" aria-label="Bild folgt">
+  <defs>
+    <linearGradient id="sky-h" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0EA5E9" stop-opacity="0.7"/>
+      <stop offset="50%" stop-color="#BAE6FD"/>
+      <stop offset="80%" stop-color="#FED7AA"/>
+      <stop offset="100%" stop-color="#FDBA74"/>
+    </linearGradient>
+    <linearGradient id="sun-h" cx="50%" cy="50%" r="50%" fx="50%" fy="50%" gradientUnits="objectBoundingBox">
+      <stop offset="0%" stop-color="#FDE68A"/>
+      <stop offset="100%" stop-color="#FCA5A5" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <!-- Himmel -->
+  <rect width="1200" height="500" fill="url(#sky-h)"/>
+  <!-- Sonne am Horizont -->
+  <circle cx="600" cy="380" r="90" fill="#FDE68A" opacity="0.5"/>
+  <circle cx="600" cy="380" r="55" fill="#FCD34D" opacity="0.65"/>
+  <!-- Horizont / Landschaft -->
+  <ellipse cx="200" cy="490" rx="350" ry="60" fill="#166534" opacity="0.3"/>
+  <ellipse cx="900" cy="490" rx="400" ry="55" fill="#166534" opacity="0.3"/>
+  <rect x="0" y="440" width="1200" height="60" fill="#15803D" opacity="0.25"/>
+  <!-- Ballon links -->
+  <ellipse cx="350" cy="200" rx="65" ry="78" fill="#0EA5E9"/>
+  <ellipse cx="350" cy="200" rx="65" ry="78" fill="none" stroke="#0284C7" stroke-width="1.5"/>
+  <line x1="285" y1="200" x2="415" y2="200" stroke="#0284C7" stroke-width="1" opacity="0.4"/>
+  <ellipse cx="350" cy="200" rx="33" ry="78" fill="none" stroke="#0284C7" stroke-width="1" opacity="0.3"/>
+  <line x1="318" y1="273" x2="326" y2="298" stroke="#075985" stroke-width="1.5"/>
+  <line x1="382" y1="273" x2="374" y2="298" stroke="#075985" stroke-width="1.5"/>
+  <rect x="324" y="298" width="52" height="26" rx="4" fill="#075985"/>
+  <!-- Ballon Mitte (groß) -->
+  <ellipse cx="600" cy="185" rx="90" ry="108" fill="#F97316"/>
+  <ellipse cx="600" cy="185" rx="90" ry="108" fill="none" stroke="#EA580C" stroke-width="2"/>
+  <line x1="510" y1="185" x2="690" y2="185" stroke="#EA580C" stroke-width="1.2" opacity="0.4"/>
+  <ellipse cx="600" cy="185" rx="46" ry="108" fill="none" stroke="#EA580C" stroke-width="1.2" opacity="0.3"/>
+  <ellipse cx="600" cy="185" rx="90" ry="55" fill="none" stroke="#EA580C" stroke-width="1.2" opacity="0.25"/>
+  <line x1="555" y1="288" x2="566" y2="322" stroke="#92400E" stroke-width="2"/>
+  <line x1="645" y1="288" x2="634" y2="322" stroke="#92400E" stroke-width="2"/>
+  <rect x="564" y="322" width="72" height="36" rx="5" fill="#92400E"/>
+  <rect x="564" y="322" width="72" height="36" rx="5" fill="none" stroke="#78350F" stroke-width="2"/>
+  <line x1="583" y1="322" x2="583" y2="358" stroke="#78350F" stroke-width="1.2" opacity="0.5"/>
+  <line x1="600" y1="322" x2="600" y2="358" stroke="#78350F" stroke-width="1.2" opacity="0.5"/>
+  <line x1="617" y1="322" x2="617" y2="358" stroke="#78350F" stroke-width="1.2" opacity="0.5"/>
+  <!-- Ballon rechts -->
+  <ellipse cx="870" cy="220" rx="58" ry="70" fill="#A78BFA"/>
+  <ellipse cx="870" cy="220" rx="58" ry="70" fill="none" stroke="#7C3AED" stroke-width="1.5"/>
+  <line x1="812" y1="220" x2="928" y2="220" stroke="#7C3AED" stroke-width="1" opacity="0.4"/>
+  <line x1="842" y1="286" x2="850" y2="308" stroke="#5B21B6" stroke-width="1.5"/>
+  <line x1="898" y1="286" x2="890" y2="308" stroke="#5B21B6" stroke-width="1.5"/>
+  <rect x="848" y="308" width="46" height="23" rx="4" fill="#5B21B6"/>
+  <!-- Beschriftung -->
+  <rect x="420" y="420" width="360" height="48" rx="6" fill="white" opacity="0.72"/>
+  <text x="600" y="438" font-family="system-ui, sans-serif" font-size="12" fill="#0B1726" text-anchor="middle" opacity="0.65">Ballonsport Krohmer</text>
+  <text x="600" y="458" font-family="system-ui, sans-serif" font-size="18" font-weight="600" fill="#0B1726" text-anchor="middle">Bild folgt</text>
+</svg>

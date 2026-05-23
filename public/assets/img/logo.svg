@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 52" width="220" height="52" role="img" aria-label="Ballonsport Krohmer">
+  <!-- Ballon-Icon -->
+  <g transform="translate(2, 2)">
+    <!-- Hülle -->
+    <ellipse cx="22" cy="19" rx="14" ry="16" fill="#F97316"/>
+    <ellipse cx="22" cy="19" rx="14" ry="16" fill="none" stroke="#EA580C" stroke-width="1.2"/>
+    <!-- Streifen -->
+    <line x1="8" y1="19" x2="36" y2="19" stroke="#EA580C" stroke-width="0.8" opacity="0.5"/>
+    <ellipse cx="22" cy="19" rx="7" ry="16" fill="none" stroke="#EA580C" stroke-width="0.8" opacity="0.35"/>
+    <!-- Leinen -->
+    <line x1="15" y1="34" x2="17" y2="41" stroke="#92400E" stroke-width="1.2"/>
+    <line x1="29" y1="34" x2="27" y2="41" stroke="#92400E" stroke-width="1.2"/>
+    <!-- Korb -->
+    <rect x="15" y="41" width="14" height="7" rx="2" fill="#92400E"/>
+  </g>
+  <!-- Wortmarke -->
+  <text x="50" y="22" font-family="system-ui, -apple-system, sans-serif" font-size="14" font-weight="700" fill="#0B1726" letter-spacing="-0.3">Ballonsport</text>
+  <text x="50" y="40" font-family="system-ui, -apple-system, sans-serif" font-size="16" font-weight="400" fill="#F97316" letter-spacing="0.5">Krohmer</text>
+</svg>

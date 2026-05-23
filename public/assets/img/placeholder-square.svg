@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" width="500" height="500" role="img" aria-label="Bild folgt">
+  <defs>
+    <linearGradient id="sky-s" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#BAE6FD"/>
+      <stop offset="65%" stop-color="#E0F2FE"/>
+      <stop offset="100%" stop-color="#FED7AA"/>
+    </linearGradient>
+  </defs>
+  <!-- Himmel -->
+  <rect width="500" height="500" fill="url(#sky-s)"/>
+  <!-- Wiese -->
+  <ellipse cx="250" cy="480" rx="290" ry="45" fill="#86EFAC" opacity="0.45"/>
+  <rect x="0" y="450" width="500" height="50" fill="#4ADE80" opacity="0.28"/>
+  <!-- Ballon-Hülle -->
+  <ellipse cx="250" cy="200" rx="75" ry="88" fill="#F97316"/>
+  <ellipse cx="250" cy="200" rx="75" ry="88" fill="none" stroke="#EA580C" stroke-width="2"/>
+  <!-- Streifen -->
+  <line x1="175" y1="200" x2="325" y2="200" stroke="#EA580C" stroke-width="1.2" opacity="0.4"/>
+  <ellipse cx="250" cy="200" rx="38" ry="88" fill="none" stroke="#EA580C" stroke-width="1.2" opacity="0.3"/>
+  <!-- Leinen -->
+  <line x1="212" y1="284" x2="222" y2="316" stroke="#92400E" stroke-width="2"/>
+  <line x1="288" y1="284" x2="278" y2="316" stroke="#92400E" stroke-width="2"/>
+  <!-- Korb -->
+  <rect x="220" y="316" width="60" height="32" rx="5" fill="#92400E"/>
+  <rect x="220" y="316" width="60" height="32" rx="5" fill="none" stroke="#78350F" stroke-width="2"/>
+  <!-- Beschriftung -->
+  <rect x="100" y="402" width="300" height="50" rx="6" fill="white" opacity="0.75"/>
+  <text x="250" y="421" font-family="system-ui, sans-serif" font-size="12" fill="#0B1726" text-anchor="middle" opacity="0.7">Ballonsport Krohmer</text>
+  <text x="250" y="442" font-family="system-ui, sans-serif" font-size="17" font-weight="600" fill="#0B1726" text-anchor="middle">Bild folgt</text>
+</svg>

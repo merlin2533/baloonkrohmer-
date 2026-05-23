@@ -1,0 +1,82 @@
+# =============================================================================
+# Ballonsport Krohmer — Root .htaccess
+# Hinweis: Idealerweise ist public/ als DocumentRoot gesetzt.
+# Diese Datei dient als Fallback, wenn Apache vom Repo-Root serviert.
+# =============================================================================
+
+Options -Indexes -MultiViews
+
+# ---------------------------------------------------------------------------
+# Rewrite Engine
+# ---------------------------------------------------------------------------
+RewriteEngine On
+
+# HTTPS-Redirect
+RewriteCond %{HTTPS} off
+RewriteCond %{HTTP_HOST} !^localhost [NC]
+RewriteCond %{HTTP_HOST} !^127\. [NC]
+RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# Wenn Apache vom Repo-Root serviert: Anfragen nach /public/ weiterleiten
+# (Sofern der Request nicht bereits /public/ enthält oder eine Systemdatei ist)
+RewriteCond %{REQUEST_URI} !^/public/
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ /public/$1 [L]
+
+# ---------------------------------------------------------------------------
+# Compression (gzip/deflate)
+# ---------------------------------------------------------------------------
+<IfModule mod_deflate.c>
+    AddOutputFilterByType DEFLATE text/html text/plain text/css text/xml
+    AddOutputFilterByType DEFLATE application/javascript application/json
+    AddOutputFilterByType DEFLATE image/svg+xml
+    AddOutputFilterByType DEFLATE application/x-font-ttf font/opentype
+</IfModule>
+
+# ---------------------------------------------------------------------------
+# Cache-Control
+# ---------------------------------------------------------------------------
+<IfModule mod_expires.c>
+    ExpiresActive On
+
+    # Assets mit Hash im Dateinamen: 1 Jahr immutable
+    <FilesMatch "\.[0-9a-f]{8,}\.(css|js|woff2?|ttf|svg|png|jpg|jpeg|webp|gif)$">
+        ExpiresDefault "access plus 1 year"
+        Header append Cache-Control "immutable"
+    </FilesMatch>
+
+    # Übrige Assets: 1 Tag
+    <FilesMatch "\.(css|js|woff2?|ttf|svg|png|jpg|jpeg|webp|gif|ico)$">
+        ExpiresDefault "access plus 1 day"
+    </FilesMatch>
+
+    # Uploads: 1 Tag
+    <FilesMatch "\.(webp|jpg|jpeg|png|gif)$">
+        ExpiresDefault "access plus 1 day"
+    </FilesMatch>
+
+    # HTML/PHP: kein Cache
+    ExpiresDefault "access plus 0 seconds"
+</IfModule>
+
+# ---------------------------------------------------------------------------
+# Security-Header
+# ---------------------------------------------------------------------------
+<IfModule mod_headers.c>
+    Header always set X-Content-Type-Options "nosniff"
+    Header always set X-Frame-Options "SAMEORIGIN"
+    Header always set Referrer-Policy "strict-origin-when-cross-origin"
+    Header always set Permissions-Policy "camera=(), microphone=(), geolocation=(), payment=()"
+</IfModule>
+
+# ---------------------------------------------------------------------------
+# Schutz sensibler Dateien
+# ---------------------------------------------------------------------------
+<FilesMatch "\.(sqlite|db|env|log|sh|bak)$">
+    Require all denied
+</FilesMatch>
+
+<FilesMatch "^(config\.php|bootstrap\.php)$">
+    Require all denied
+</FilesMatch>

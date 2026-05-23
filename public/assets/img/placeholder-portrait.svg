@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 450 600" width="450" height="600" role="img" aria-label="Bild folgt">
+  <defs>
+    <linearGradient id="sky-p" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#BAE6FD"/>
+      <stop offset="65%" stop-color="#E0F2FE"/>
+      <stop offset="100%" stop-color="#FED7AA"/>
+    </linearGradient>
+  </defs>
+  <!-- Himmel -->
+  <rect width="450" height="600" fill="url(#sky-p)"/>
+  <!-- Wiese -->
+  <ellipse cx="225" cy="570" rx="260" ry="50" fill="#86EFAC" opacity="0.45"/>
+  <rect x="0" y="530" width="450" height="70" fill="#4ADE80" opacity="0.28"/>
+  <!-- Ballon-Hülle -->
+  <ellipse cx="225" cy="230" rx="80" ry="95" fill="#F97316"/>
+  <ellipse cx="225" cy="230" rx="80" ry="95" fill="none" stroke="#EA580C" stroke-width="2"/>
+  <!-- Ballon-Streifen -->
+  <line x1="145" y1="230" x2="305" y2="230" stroke="#EA580C" stroke-width="1.2" opacity="0.4"/>
+  <ellipse cx="225" cy="230" rx="42" ry="95" fill="none" stroke="#EA580C" stroke-width="1.2" opacity="0.3"/>
+  <ellipse cx="225" cy="230" rx="80" ry="48" fill="none" stroke="#EA580C" stroke-width="1.2" opacity="0.25"/>
+  <!-- Leinen -->
+  <line x1="185" y1="320" x2="197" y2="358" stroke="#92400E" stroke-width="2"/>
+  <line x1="265" y1="320" x2="253" y2="358" stroke="#92400E" stroke-width="2"/>
+  <!-- Korb -->
+  <rect x="195" y="358" width="62" height="34" rx="5" fill="#92400E"/>
+  <rect x="195" y="358" width="62" height="34" rx="5" fill="none" stroke="#78350F" stroke-width="2"/>
+  <!-- Gitter Korb -->
+  <line x1="211" y1="358" x2="211" y2="392" stroke="#78350F" stroke-width="1.2" opacity="0.5"/>
+  <line x1="226" y1="358" x2="226" y2="392" stroke="#78350F" stroke-width="1.2" opacity="0.5"/>
+  <line x1="241" y1="358" x2="241" y2="392" stroke="#78350F" stroke-width="1.2" opacity="0.5"/>
+  <!-- Beschriftung -->
+  <rect x="75" y="478" width="300" height="50" rx="6" fill="white" opacity="0.75"/>
+  <text x="225" y="497" font-family="system-ui, sans-serif" font-size="12" fill="#0B1726" text-anchor="middle" opacity="0.7">Ballonsport Krohmer</text>
+  <text x="225" y="518" font-family="system-ui, sans-serif" font-size="17" font-weight="600" fill="#0B1726" text-anchor="middle">Bild folgt</text>
+</svg>

@@ -1,0 +1,20 @@
+# Sicherheits-Konfiguration für das Upload-Verzeichnis
+# PHP-Ausführung komplett deaktivieren
+php_flag engine off
+
+# Alle Script-Dateien sperren
+<FilesMatch "\.(php|phtml|phar|pl|py|jsp|asp|sh|cgi)$">
+    Require all denied
+</FilesMatch>
+
+# Nur Bild-Dateien erlauben (Defense-in-Depth)
+<FilesMatch "\.(jpg|jpeg|png|gif|webp|svg|ico)$">
+    Require all granted
+</FilesMatch>
+
+# Alle anderen Dateien sperren
+<FilesMatch "^(?!.*\.(jpg|jpeg|png|gif|webp|svg|ico|gitkeep)$).*$">
+    Require all denied
+</FilesMatch>
+
+Options -Indexes -ExecCGI
