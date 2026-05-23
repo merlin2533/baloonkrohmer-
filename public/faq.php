@@ -1,11 +1,49 @@
 <?php
 require __DIR__ . '/../src/bootstrap.php';
+
+/**
+ * Baut ein FAQPage-JSON-LD-Array aus Content-Keys auf.
+ * Fragen: faq_q1..faq_q12 | Antworten: faq_a1_html..faq_a12_html
+ */
+function faq_jsonld_block(): string
+{
+    $entities = [];
+    for ($i = 1; $i <= 12; $i++) {
+        $question = t_raw('faq_q' . $i);
+        $answerHtml = t_raw('faq_a' . $i . '_html');
+        if ($question === '' && $answerHtml === '') {
+            continue;
+        }
+        $entities[] = [
+            '@type'          => 'Question',
+            'name'           => strip_tags($question),
+            'acceptedAnswer' => [
+                '@type' => 'Answer',
+                'text'  => strip_tags($answerHtml),
+            ],
+        ];
+    }
+
+    $schema = [
+        '@context'   => 'https://schema.org',
+        '@type'      => 'FAQPage',
+        'mainEntity' => $entities,
+    ];
+
+    return json_encode($schema, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES | JSON_PRETTY_PRINT);
+}
+
 seo_head([
     'title'       => t('faq_title', 'Häufig gestellte Fragen'),
     'description' => t('faq_lead', 'Antworten auf die wichtigsten Fragen rund um Ihre Ballonfahrt mit Ballonsport Krohmer.'),
     'canonical'   => 'https://www.ballonsport-krohmer.de/faq.php',
     'og_image_key' => 'og_default',
 ]);
+?>
+    <script type="application/ld+json">
+<?= faq_jsonld_block() ?>
+    </script>
+<?php
 include __DIR__ . '/../src/partials/header.php';
 ?>
 

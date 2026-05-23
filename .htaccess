@@ -80,3 +80,46 @@ RewriteRule ^(.*)$ /public/$1 [L]
 <FilesMatch "^(config\.php|bootstrap\.php)$">
     Require all denied
 </FilesMatch>
+
+# =============================================================================
+# Phase 4 — SEO & Performance
+# =============================================================================
+
+# ---------------------------------------------------------------------------
+# sitemap.xml und robots.txt direkt aus public/ ausliefern
+# (vor der generischen public/-Umleitung abfangen, damit statische Dateien
+#  wie public/sitemap.xml und public/robots.txt korrekt gefunden werden)
+# ---------------------------------------------------------------------------
+RewriteCond %{REQUEST_URI} ^/sitemap\.xml$ [OR]
+RewriteCond %{REQUEST_URI} ^/robots\.txt$
+RewriteRule ^(.*)$ /public/$1 [L]
+
+# ---------------------------------------------------------------------------
+# 404-Fehlerseite
+# ---------------------------------------------------------------------------
+ErrorDocument 404 /404.php
+
+# ---------------------------------------------------------------------------
+# Cache-Control für Assets und Uploads (max-age=1 Jahr, immutable)
+# ---------------------------------------------------------------------------
+<IfModule mod_headers.c>
+    <FilesMatch "^assets/.*\.(css|js|woff2?|ttf|svg|png|jpg|jpeg|webp|gif|ico)$">
+        Header set Cache-Control "max-age=31536000, immutable"
+    </FilesMatch>
+    <FilesMatch "^uploads/.*\.(png|jpg|jpeg|webp|gif)$">
+        Header set Cache-Control "max-age=31536000, immutable"
+    </FilesMatch>
+
+    # Standard-Seiten: 1 Stunde
+    <FilesMatch "\.(html|php)$">
+        Header set Cache-Control "max-age=3600, must-revalidate"
+    </FilesMatch>
+</IfModule>
+
+# ---------------------------------------------------------------------------
+# Compression — falls noch nicht vollständig aktiv (Ergänzung)
+# ---------------------------------------------------------------------------
+<IfModule mod_deflate.c>
+    AddOutputFilterByType DEFLATE application/xml
+    AddOutputFilterByType DEFLATE text/xml
+</IfModule>
