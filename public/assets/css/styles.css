@@ -4,54 +4,33 @@
    ============================================================================= */
 
 /* ---------------------------------------------------------------------------
-   @font-face — Self-Hosted Fonts
-   Dateien in /assets/fonts/ ablegen (siehe README-fonts.txt).
-   Solange Dateien fehlen, greifen die system-ui-Fallbacks.
+   @font-face — Self-Hosted Fonts (v1)
+   Inter: variable font (100–900, alle Weights in einer Datei)
+   Playfair Display: Regular 400 + Bold 700 als statische Fonts
+   Dateien in /assets/fonts/ — bei Font-Updates Versionsstring hochzählen.
    --------------------------------------------------------------------------- */
-/*
 @font-face {
   font-family: 'Inter';
-  src: url('/assets/fonts/inter-400.woff2') format('woff2');
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: 'Inter';
-  src: url('/assets/fonts/inter-500.woff2') format('woff2');
-  font-weight: 500;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: 'Inter';
-  src: url('/assets/fonts/inter-600.woff2') format('woff2');
-  font-weight: 600;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: 'Inter';
-  src: url('/assets/fonts/inter-700.woff2') format('woff2');
-  font-weight: 700;
+  src: url('/assets/fonts/Inter.var.woff2?v=1') format('woff2-variations'),
+       url('/assets/fonts/Inter.var.woff2?v=1') format('woff2');
+  font-weight: 100 900;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: 'Playfair Display';
-  src: url('/assets/fonts/playfair-400.woff2') format('woff2');
+  src: url('/assets/fonts/PlayfairDisplay-Regular.woff2?v=1') format('woff2');
   font-weight: 400;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: 'Playfair Display';
-  src: url('/assets/fonts/playfair-700.woff2') format('woff2');
+  src: url('/assets/fonts/PlayfairDisplay-Bold.woff2?v=1') format('woff2');
   font-weight: 700;
   font-style: normal;
   font-display: swap;
 }
-*/
 
 /* ---------------------------------------------------------------------------
    Custom Properties (Design-Tokens)

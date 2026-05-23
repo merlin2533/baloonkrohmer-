@@ -29,11 +29,10 @@ include __DIR__ . '/../src/partials/header.php';
 <?php for ($i = 1; $i <= 15; $i++):
     $key    = sprintf('gallery_%02d', $i);
     $src    = img_url($key);
-    // img() liefert kein data-* — wir bauen das Markup manuell
     $stmt   = db()->prepare('SELECT alt FROM images WHERE key = :key');
     $stmt->execute([':key' => $key]);
-    $row    = $stmt->fetch();
-    $alt    = $row ? e($row['alt']) : 'Eindruck einer Ballonfahrt';
+    $dbRow  = $stmt->fetch();
+    $alt    = $dbRow ? e($dbRow['alt']) : 'Eindruck einer Ballonfahrt';
 ?>
             <button
                 class="gallery__item"
@@ -42,12 +41,11 @@ include __DIR__ . '/../src/partials/header.php';
                 data-lightbox-alt="<?= $alt ?>"
                 aria-label="Bild <?= $i ?> vergrößern: <?= $alt ?>"
             >
-                <img
-                    class="gallery__img"
-                    src="<?= e($src) ?>"
-                    alt="<?= $alt ?>"
-                    loading="lazy"
-                >
+                <?= img($key, $dbRow['alt'] ?? 'Eindruck einer Ballonfahrt', [
+                    'class'   => 'gallery__img',
+                    'loading' => 'lazy',
+                    'sizes'   => '(max-width: 640px) 50vw, (max-width: 1100px) 33vw, 400px',
+                ]) ?>
             </button>
 <?php endfor; ?>
         </div>

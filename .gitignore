@@ -33,3 +33,14 @@ public/uploads/*
 !public/uploads/gallery_13.jpg
 !public/uploads/gallery_14.jpg
 !public/uploads/gallery_15.jpg
+
+# Generierte Bild-Varianten (build-images.php) ebenfalls tracken
+!public/uploads/*-480.jpg
+!public/uploads/*-960.jpg
+!public/uploads/*-1600.jpg
+!public/uploads/*-480.webp
+!public/uploads/*-960.webp
+!public/uploads/*-1600.webp
+!public/uploads/*-thumb.jpg
+!public/uploads/*-thumb.webp
+!public/uploads/logo.webp

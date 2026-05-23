@@ -121,9 +121,29 @@ function seo_head(array $args = []): void
     <link rel="preload" href="<?= e(asset('/assets/css/styles.css')) ?>" as="style">
     <link rel="stylesheet" href="<?= e(asset('/assets/css/styles.css')) ?>">
 
+<?php if (defined('ROOT') && file_exists(ROOT . '/public/assets/fonts/Inter.var.woff2')): ?>
+    <!-- Inter Variable Font preload -->
+    <link rel="preload" as="font" type="font/woff2" href="/assets/fonts/Inter.var.woff2" crossorigin>
+<?php endif; ?>
+
 <?php if ($preloadImageKey !== ''): ?>
     <!-- LCP-Bild preload -->
+<?php
+    $preloadRow      = (_image_cache())[$preloadImageKey] ?? null;
+    $preloadFilename = $preloadRow['filename'] ?? '';
+    $preloadVariants = _img_variants_info($preloadFilename);
+    if ($preloadVariants !== null):
+        $pvDir      = $preloadVariants['uploadDir'];
+        $pvBase     = $preloadVariants['basename'];
+        $pvSrcset   = _img_srcset($pvDir, $pvBase, 'webp');
+        if ($pvSrcset === '') {
+            $pvSrcset = _img_srcset($pvDir, $pvBase, 'jpg');
+        }
+?>
+    <link rel="preload" as="image" imagesrcset="<?= e($pvSrcset) ?>" imagesizes="100vw">
+<?php else: ?>
     <link rel="preload" as="image" href="<?= e(img_url($preloadImageKey)) ?>">
+<?php endif; ?>
 <?php endif; ?>
 
     <!-- JSON-LD Structured Data -->
