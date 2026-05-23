@@ -1182,3 +1182,510 @@ address {
   white-space: nowrap;
   border-width: 0;
 }
+
+/* =============================================================================
+   Phase 2 — Page-spezifische Styles
+   ============================================================================= */
+
+/* ---------------------------------------------------------------------------
+   Hero — Varianten
+   --------------------------------------------------------------------------- */
+
+/* Vollbild-Hero (Startseite) */
+.hero--full {
+  min-height: clamp(500px, 75vh, 820px);
+}
+
+/* Kompakter Hero (Unterseiten) */
+.hero--compact {
+  min-height: clamp(200px, 35vh, 360px);
+}
+
+.hero--compact .hero__inner {
+  padding-block: var(--space-10);
+}
+
+.hero--compact .hero__title {
+  font-size: clamp(1.75rem, 4.5vw, 3rem);
+}
+
+/* ---------------------------------------------------------------------------
+   Prose (redaktionelle Textblöcke)
+   --------------------------------------------------------------------------- */
+.prose {
+  max-width: 72ch;
+  line-height: 1.8;
+  color: var(--c-ink-500);
+}
+
+.prose--wide {
+  max-width: 900px;
+}
+
+.prose--narrow {
+  max-width: 720px;
+  margin-inline: auto;
+}
+
+.prose h2,
+.prose h3,
+.prose h4 {
+  color: var(--c-ink-900);
+  margin-block: var(--space-8) var(--space-3);
+}
+
+.prose h2:first-child,
+.prose h3:first-child {
+  margin-block-start: 0;
+}
+
+.prose p {
+  margin-block-end: var(--space-4);
+}
+
+.prose ul,
+.prose ol {
+  list-style: disc;
+  padding-left: var(--space-6);
+  margin-block-end: var(--space-4);
+}
+
+.prose ol {
+  list-style: decimal;
+}
+
+.prose li {
+  margin-block-end: var(--space-2);
+}
+
+.prose a {
+  color: var(--c-sky-500);
+  text-decoration: underline;
+}
+
+.prose a:hover {
+  color: var(--c-sky-700);
+}
+
+/* ---------------------------------------------------------------------------
+   Home Intro (zweispaltig)
+   --------------------------------------------------------------------------- */
+.home-intro {
+  display: grid;
+  gap: var(--space-10);
+  align-items: center;
+}
+
+@media (min-width: 900px) {
+  .home-intro {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.home-intro__photo {
+  border-radius: var(--radius-lg);
+  width: 100%;
+  aspect-ratio: 4/3;
+  object-fit: cover;
+}
+
+.home-intro__content .section__title {
+  margin-block-end: var(--space-5);
+}
+
+.home-intro__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+  margin-top: var(--space-6);
+}
+
+/* ---------------------------------------------------------------------------
+   Trust Bar
+   --------------------------------------------------------------------------- */
+.trust-bar {
+  background: var(--c-ink-900);
+  padding-block: var(--space-5);
+}
+
+.trust-bar__inner {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+  justify-content: center;
+  align-items: center;
+}
+
+.trust-bar .badge {
+  background: rgba(255,255,255,0.12);
+  color: rgba(255,255,255,0.9);
+}
+
+/* ---------------------------------------------------------------------------
+   Info List (Unterseiten-Cards mit Aufzählung)
+   --------------------------------------------------------------------------- */
+.info-list {
+  list-style: none;
+  padding: 0;
+  margin: var(--space-3) 0 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.info-list li {
+  padding-left: var(--space-5);
+  position: relative;
+  color: var(--c-ink-500);
+  font-size: 0.9375rem;
+}
+
+.info-list li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: var(--c-sky-500);
+  font-weight: 700;
+}
+
+/* ---------------------------------------------------------------------------
+   Price Grid
+   --------------------------------------------------------------------------- */
+.price-grid {
+  align-items: start;
+}
+
+@media (min-width: 900px) {
+  .price-grid {
+    align-items: stretch;
+  }
+}
+
+.price-card__badge {
+  display: inline-block;
+  background: var(--c-sunset-500);
+  color: #fff;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  padding: var(--space-1) var(--space-3);
+  border-radius: 999px;
+  margin-block-end: var(--space-4);
+}
+
+.price-card__features {
+  margin-block: var(--space-5);
+  text-align: left;
+}
+
+.price-card__features ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.price-card__features li {
+  padding-left: var(--space-5);
+  position: relative;
+  font-size: 0.9375rem;
+  color: var(--c-ink-500);
+}
+
+.price-card__features li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: var(--c-sky-500);
+  font-weight: 700;
+}
+
+/* ---------------------------------------------------------------------------
+   Voucher Section
+   --------------------------------------------------------------------------- */
+.voucher-section {
+  display: grid;
+  gap: var(--space-8);
+  align-items: center;
+  max-width: 860px;
+  margin-inline: auto;
+  text-align: center;
+}
+
+@media (min-width: 640px) {
+  .voucher-section {
+    grid-template-columns: auto 1fr;
+    text-align: left;
+  }
+}
+
+.voucher-section__content .section__title {
+  margin-block-end: var(--space-4);
+}
+
+/* ---------------------------------------------------------------------------
+   Alert — info variant
+   --------------------------------------------------------------------------- */
+.alert--info {
+  background: var(--c-sky-50);
+  border-color: var(--c-sky-100);
+  color: var(--c-sky-700);
+  overflow: hidden;
+}
+
+/* ---------------------------------------------------------------------------
+   Ballon Card
+   --------------------------------------------------------------------------- */
+.ballon-card__img {
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+}
+
+.ballon-card__capacity {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  margin-top: var(--space-4);
+  font-size: 0.875rem;
+  color: var(--c-ink-300);
+  margin-bottom: 0;
+}
+
+/* ---------------------------------------------------------------------------
+   Info Block (Ballone: Gruppen-Hinweis)
+   --------------------------------------------------------------------------- */
+.info-block {
+  display: grid;
+  gap: var(--space-8);
+  align-items: center;
+  text-align: center;
+  max-width: 800px;
+  margin-inline: auto;
+}
+
+@media (min-width: 640px) {
+  .info-block {
+    grid-template-columns: auto 1fr;
+    text-align: left;
+  }
+}
+
+.info-block__icon {
+  color: var(--c-sky-500);
+  justify-self: center;
+}
+
+.info-block__title {
+  font-size: clamp(1.25rem, 3vw, 1.75rem);
+  margin-block-end: var(--space-3);
+}
+
+.info-block__text {
+  color: var(--c-ink-500);
+  margin-block-end: var(--space-5);
+}
+
+/* ---------------------------------------------------------------------------
+   Lightbox — Prev/Next Buttons
+   --------------------------------------------------------------------------- */
+.lightbox__prev,
+.lightbox__next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255,255,255,0.1);
+  border: none;
+  color: #fff;
+  font-size: 1.5rem;
+  line-height: 1;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background var(--transition-fast);
+}
+
+.lightbox__prev {
+  left: var(--space-4);
+}
+
+.lightbox__next {
+  right: var(--space-4);
+}
+
+.lightbox__prev:hover,
+.lightbox__next:hover {
+  background: rgba(255,255,255,0.25);
+}
+
+/* ---------------------------------------------------------------------------
+   FAQ — native details/summary Styles
+   --------------------------------------------------------------------------- */
+details.faq__item > summary.faq__q {
+  list-style: none;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--space-4);
+  padding-block: var(--space-5);
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--c-ink-900);
+  font-family: var(--font-sans);
+  transition: color var(--transition-fast);
+}
+
+details.faq__item > summary.faq__q::-webkit-details-marker {
+  display: none;
+}
+
+details.faq__item > summary.faq__q::after {
+  content: "";
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='%2394A3B8'%3E%3Cpath fill-rule='evenodd' d='M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z' clip-rule='evenodd'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: center;
+  transition: transform var(--transition-base);
+}
+
+details.faq__item[open] > summary.faq__q::after {
+  transform: rotate(180deg);
+}
+
+details.faq__item > summary.faq__q:hover {
+  color: var(--c-sky-500);
+}
+
+details.faq__item .faq__a {
+  display: block;
+  padding-block-end: var(--space-5);
+  color: var(--c-ink-500);
+  font-size: 0.9375rem;
+  line-height: 1.7;
+}
+
+/* ---------------------------------------------------------------------------
+   Kontakt — Layout
+   --------------------------------------------------------------------------- */
+.kontakt-layout {
+  display: grid;
+  gap: var(--space-10);
+}
+
+@media (min-width: 900px) {
+  .kontakt-layout {
+    grid-template-columns: 1fr 1.4fr;
+    align-items: start;
+  }
+}
+
+.kontakt-info__list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  list-style: none;
+  padding: 0;
+}
+
+.kontakt-info__list li {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-3);
+  font-size: 0.9375rem;
+  color: var(--c-ink-700);
+}
+
+.kontakt-info__list a {
+  color: var(--c-ink-700);
+  text-decoration: none;
+}
+
+.kontakt-info__list a:hover {
+  color: var(--c-sky-500);
+  text-decoration: underline;
+}
+
+/* Datenschutz-Checkbox */
+.form__field--check {
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 0;
+}
+
+.form__check-label {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-3);
+  font-size: 0.9375rem;
+  color: var(--c-ink-700);
+  cursor: pointer;
+  line-height: 1.5;
+}
+
+.form__check-label input[type="checkbox"] {
+  flex-shrink: 0;
+  margin-top: 2px;
+  width: 18px;
+  height: 18px;
+  accent-color: var(--c-sky-500);
+  cursor: pointer;
+}
+
+/* ---------------------------------------------------------------------------
+   Danke-Seite
+   --------------------------------------------------------------------------- */
+.danke-box {
+  max-width: 580px;
+  margin-inline: auto;
+  text-align: center;
+  padding-block: var(--space-10);
+}
+
+.danke-box__icon {
+  margin-block-end: var(--space-6);
+}
+
+.danke-box__title {
+  font-size: clamp(1.75rem, 4vw, 2.5rem);
+  margin-block-end: var(--space-4);
+}
+
+.danke-box__text {
+  font-size: 1.125rem;
+  color: var(--c-ink-500);
+  margin-block-end: var(--space-5);
+}
+
+.danke-box__hint {
+  font-size: 1rem;
+  color: var(--c-ink-500);
+  margin-block-end: var(--space-8);
+}
+
+.danke-box__phone {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--c-ink-900);
+  display: block;
+  margin-top: var(--space-2);
+}
+
+.danke-box__phone:hover {
+  color: var(--c-sky-500);
+}
+
+.danke-box__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+  justify-content: center;
+}
