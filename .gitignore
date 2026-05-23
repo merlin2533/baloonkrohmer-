@@ -1,6 +1,35 @@
 vendor/
 data/*.sqlite
 config/config.php
+
+# /public/uploads/: alle User-Uploads werden ignoriert, ausser den
+# Original-Seed-Bildern (in der DB als Default referenziert). Wenn der Admin
+# ein Bild ueber das Panel ersetzt, landet die neue Datei mit Hash-Suffix
+# (z.B. hero_main-a1b2c3d4.jpg) ebenfalls unter /public/uploads/ und wird
+# automatisch ignoriert.
 public/uploads/*
 !public/uploads/.gitkeep
 !public/uploads/.htaccess
+!public/uploads/logo.png
+!public/uploads/hero_main.jpg
+!public/uploads/ballonfahren_hero.jpg
+!public/uploads/preise_hero.jpg
+!public/uploads/kontakt_hero.jpg
+!public/uploads/ballon_dogkr.jpg
+!public/uploads/ballon_doaak.jpg
+!public/uploads/ballon_doaam.jpg
+!public/uploads/gallery_01.jpg
+!public/uploads/gallery_02.jpg
+!public/uploads/gallery_03.jpg
+!public/uploads/gallery_04.jpg
+!public/uploads/gallery_05.jpg
+!public/uploads/gallery_06.jpg
+!public/uploads/gallery_07.jpg
+!public/uploads/gallery_08.jpg
+!public/uploads/gallery_09.jpg
+!public/uploads/gallery_10.jpg
+!public/uploads/gallery_11.jpg
+!public/uploads/gallery_12.jpg
+!public/uploads/gallery_13.jpg
+!public/uploads/gallery_14.jpg
+!public/uploads/gallery_15.jpg

@@ -249,25 +249,28 @@ function run_seed(PDO $pdo): void
     // -------------------------------------------------------------------------
     // Image-Keys
     // -------------------------------------------------------------------------
+    // Image-Keys: Default-Werte zeigen auf die Original-Bilder unter /public/uploads/.
+    // Wenn die Datei nicht existiert, liefert img_url() automatisch ein passendes
+    // SVG-Placeholder zurück, sodass die Seite weiterhin funktioniert.
     $imageRows = [
-        ['logo',           'assets/img/logo.svg',                    'Ballonsport Krohmer'],
-        ['hero_main',      'assets/img/placeholder-hero.svg',        'Heißluftballon über der Schwäbischen Alb bei Sonnenaufgang'],
-        ['home_about',     'assets/img/placeholder-landscape.svg',   'Heißluftballon startet bei Sonnenaufgang'],
-        ['ballonfahren_hero', 'assets/img/placeholder-hero.svg',     'Ballonfahrt über die Schwäbische Alb'],
-        ['ballon_dogkr',   'assets/img/placeholder-portrait.svg',    'Heißluftballon D-OGKR Krohmer'],
-        ['ballon_doaak',   'assets/img/placeholder-portrait.svg',    'Heißluftballon D-OAAK Alpirsbacher'],
-        ['ballon_doaam',   'assets/img/placeholder-portrait.svg',    'Heißluftballon D-OAAM Wolff und Müller'],
-        ['kontakt_hero',   'assets/img/placeholder-landscape.svg',   'Kontakt zu Ballonsport Krohmer'],
-        ['preise_hero',    'assets/img/placeholder-landscape.svg',   'Preise und Pakete'],
-        ['og_default',     'assets/img/placeholder-landscape.svg',   'Ballonsport Krohmer'],
+        ['logo',              'logo.png',              'Ballonsport Krohmer'],
+        ['hero_main',         'hero_main.jpg',         'Heißluftballon über der Schwäbischen Alb bei Sonnenaufgang'],
+        ['home_about',        'hero_main.jpg',         'Heißluftballon startet bei Sonnenaufgang'],
+        ['ballonfahren_hero', 'ballonfahren_hero.jpg', 'Ballonfahrt über die Schwäbische Alb'],
+        ['ballon_dogkr',      'ballon_dogkr.jpg',      'Heißluftballon D-OGKR Krohmer'],
+        ['ballon_doaak',      'ballon_doaak.jpg',      'Heißluftballon D-OAAK Alpirsbacher'],
+        ['ballon_doaam',      'ballon_doaam.jpg',      'Heißluftballon D-OAAM Wolff und Müller'],
+        ['kontakt_hero',      'kontakt_hero.jpg',      'Kontakt zu Ballonsport Krohmer'],
+        ['preise_hero',       'preise_hero.jpg',       'Preise und Pakete'],
+        ['og_default',        'hero_main.jpg',         'Ballonsport Krohmer'],
     ];
 
     // gallery_01 bis gallery_15
     for ($i = 1; $i <= 15; $i++) {
         $imageRows[] = [
             sprintf('gallery_%02d', $i),
-            'assets/img/placeholder-landscape.svg',
-            'Eindruck einer Ballonfahrt',
+            sprintf('gallery_%02d.jpg', $i),
+            sprintf('Eindruck einer Ballonfahrt — Bild %d', $i),
         ];
     }
 
