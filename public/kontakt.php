@@ -101,13 +101,11 @@ include __DIR__ . '/../src/partials/header.php';
      PAGE HERO (kompakt)
      ===================================================================== -->
 <section class="hero hero--compact" aria-label="<?= t('kontakt_title') ?>">
-    <img
-        src="<?= img_url('kontakt_hero') ?>"
-        alt="Kontakt zu Ballonsport Krohmer"
-        class="hero__bg"
-        loading="eager"
-        fetchpriority="high"
-    >
+    <?= img('kontakt_hero', 'Kontakt zu Ballonsport Krohmer', [
+        'class'    => 'hero__bg',
+        'priority' => true,
+        'sizes'    => '100vw',
+    ]) ?>
     <div class="hero__overlay"></div>
     <div class="container hero__inner">
         <h1 class="hero__title"><?= t('kontakt_title') ?></h1>
@@ -168,7 +166,8 @@ include __DIR__ . '/../src/partials/header.php';
                                 title="Standort Ballonsport Krohmer auf OpenStreetMap"
                                 src="https://www.openstreetmap.org/export/embed.html?bbox=9.2147%2C48.5397%2C9.2347%2C48.5497&amp;layer=mapnik"
                                 width="100%"
-                                height="220"
+                                height="320"
+                                class="kontakt-map__iframe"
                                 style="border:1px solid var(--c-line);border-radius:var(--radius-md)"
                                 loading="lazy"
                                 referrerpolicy="no-referrer"
@@ -222,6 +221,7 @@ include __DIR__ . '/../src/partials/header.php';
                             name="name"
                             required
                             autocomplete="name"
+                            enterkeyhint="next"
                             value="<?= isset($_POST['name']) ? e($_POST['name']) : '' ?>"
                         >
                     </div>
@@ -236,6 +236,8 @@ include __DIR__ . '/../src/partials/header.php';
                             name="email"
                             required
                             autocomplete="email"
+                            inputmode="email"
+                            enterkeyhint="next"
                             value="<?= isset($_POST['email']) ? e($_POST['email']) : '' ?>"
                         >
                     </div>
@@ -249,6 +251,8 @@ include __DIR__ . '/../src/partials/header.php';
                             id="telefon"
                             name="telefon"
                             autocomplete="tel"
+                            inputmode="tel"
+                            enterkeyhint="next"
                             value="<?= isset($_POST['telefon']) ? e($_POST['telefon']) : '' ?>"
                         >
                     </div>
@@ -277,6 +281,7 @@ include __DIR__ . '/../src/partials/header.php';
                             name="nachricht"
                             required
                             rows="6"
+                            enterkeyhint="send"
                         ><?= isset($_POST['nachricht']) ? e($_POST['nachricht']) : '' ?></textarea>
                     </div>
 
@@ -295,7 +300,7 @@ include __DIR__ . '/../src/partials/header.php';
                     </div>
 
                     <div>
-                        <button type="submit" class="btn btn-primary btn-lg">
+                        <button type="submit" class="btn btn-primary btn-lg btn--full-mobile">
                             Anfrage absenden
                         </button>
                     </div>

@@ -14,13 +14,11 @@ include __DIR__ . '/../src/partials/header.php';
      PAGE HERO (kompakt)
      ===================================================================== -->
 <section class="hero hero--compact" aria-label="<?= t('ballonfahren_title') ?>">
-    <img
-        src="<?= img_url('ballonfahren_hero') ?>"
-        alt="Ballonfahrt über die Schwäbische Alb"
-        class="hero__bg"
-        loading="eager"
-        fetchpriority="high"
-    >
+    <?= img('ballonfahren_hero', 'Ballonfahrt über die Schwäbische Alb', [
+        'class'    => 'hero__bg',
+        'priority' => true,
+        'sizes'    => '100vw',
+    ]) ?>
     <div class="hero__overlay"></div>
     <div class="container hero__inner">
         <h1 class="hero__title"><?= t('ballonfahren_title') ?></h1>

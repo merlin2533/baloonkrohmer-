@@ -110,6 +110,9 @@ function seo_head(array $args = []): void
     <meta name="twitter:description" content="<?= e($description) ?>">
     <meta name="twitter:image"       content="<?= e($ogImageUrl) ?>">
 
+    <!-- Mobile Browser Chrome -->
+    <meta name="theme-color" content="#0EA5E9">
+
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="<?= e(asset('/assets/img/logo.svg')) ?>">
 

@@ -44,7 +44,7 @@ include __DIR__ . '/../src/partials/header.php';
                 <?= img($key, $dbRow['alt'] ?? 'Eindruck einer Ballonfahrt', [
                     'class'   => 'gallery__img',
                     'loading' => 'lazy',
-                    'sizes'   => '(max-width: 640px) 50vw, (max-width: 1100px) 33vw, 400px',
+                    'sizes'   => '(max-width: 360px) 100vw, (max-width: 480px) 50vw, (max-width: 900px) 33vw, 240px',
                 ]) ?>
             </button>
 <?php endfor; ?>

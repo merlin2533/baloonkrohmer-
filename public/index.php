@@ -14,13 +14,11 @@ include __DIR__ . '/../src/partials/header.php';
      HERO
      ===================================================================== -->
 <section class="hero hero--full" aria-label="Willkommen bei Ballonsport Krohmer">
-    <img
-        src="<?= img_url('hero_main') ?>"
-        alt="Heißluftballon über der Schwäbischen Alb"
-        class="hero__bg"
-        loading="eager"
-        fetchpriority="high"
-    >
+    <?= img('hero_main', 'Heißluftballon über der Schwäbischen Alb', [
+        'class'    => 'hero__bg',
+        'priority' => true,
+        'sizes'    => '100vw',
+    ]) ?>
     <div class="hero__overlay"></div>
     <div class="container hero__inner">
         <h1 class="hero__title"><?= t('hero_title') ?></h1>
