@@ -61,13 +61,21 @@ RewriteRule ^(.*)$ /public/$1 [L]
 </IfModule>
 
 # ---------------------------------------------------------------------------
-# Security-Header
+# Security- und Performance-Header
 # ---------------------------------------------------------------------------
 <IfModule mod_headers.c>
     Header always set X-Content-Type-Options "nosniff"
     Header always set X-Frame-Options "SAMEORIGIN"
     Header always set Referrer-Policy "strict-origin-when-cross-origin"
     Header always set Permissions-Policy "camera=(), microphone=(), geolocation=(), payment=()"
+    Header always set X-DNS-Prefetch-Control "on"
+    Header always set Cross-Origin-Opener-Policy "same-origin"
+    Header always set Cross-Origin-Resource-Policy "same-site"
+
+    # HSTS — nur unter HTTPS senden
+    <If "%{HTTPS} == 'on'">
+        Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains; preload"
+    </If>
 </IfModule>
 
 # ---------------------------------------------------------------------------
@@ -101,18 +109,16 @@ ErrorDocument 404 /404.php
 
 # ---------------------------------------------------------------------------
 # Cache-Control für Assets und Uploads (max-age=1 Jahr, immutable)
+# Cache-Busting erfolgt per ?v=<filemtime> durch den asset()-Helper.
 # ---------------------------------------------------------------------------
 <IfModule mod_headers.c>
-    <FilesMatch "^assets/.*\.(css|js|woff2?|ttf|svg|png|jpg|jpeg|webp|gif|ico)$">
-        Header set Cache-Control "max-age=31536000, immutable"
-    </FilesMatch>
-    <FilesMatch "^uploads/.*\.(png|jpg|jpeg|webp|gif)$">
+    <FilesMatch "\.(css|js|woff2?|ttf|svg|png|jpg|jpeg|webp|gif|ico)$">
         Header set Cache-Control "max-age=31536000, immutable"
     </FilesMatch>
 
-    # Standard-Seiten: 1 Stunde
+    # Standard-Seiten: kein aggressiver Cache
     <FilesMatch "\.(html|php)$">
-        Header set Cache-Control "max-age=3600, must-revalidate"
+        Header set Cache-Control "no-cache, must-revalidate"
     </FilesMatch>
 </IfModule>
 

@@ -88,10 +88,11 @@ if (!in_array($getBetreff, $allowedBetreff, true)) {
 }
 
 seo_head([
-    'title'       => t('kontakt_title', 'Kontakt'),
-    'description' => t('kontakt_lead', 'Kontaktieren Sie uns für Anfragen rund um Ballonfahrten, Gutscheine und Gruppenfahrten.'),
-    'canonical'   => 'https://www.ballonsport-krohmer.de/kontakt.php',
-    'og_image_key' => 'kontakt_hero',
+    'title'             => t('kontakt_title', 'Kontakt'),
+    'description'       => t('kontakt_lead', 'Kontaktieren Sie uns für Anfragen rund um Ballonfahrten, Gutscheine und Gruppenfahrten.'),
+    'canonical'         => 'https://www.ballonsport-krohmer.de/kontakt.php',
+    'og_image_key'      => 'kontakt_hero',
+    'preload_image_key' => 'kontakt_hero',
 ]);
 include __DIR__ . '/../src/partials/header.php';
 ?>

@@ -1,10 +1,11 @@
 <?php
 require __DIR__ . '/../src/bootstrap.php';
 seo_head([
-    'title'       => 'Ballonfahrten über der Schwäbischen Alb seit 1998',
-    'description' => 'Heißluftballonfahrten über der Schwäbischen Alb — Reutlingen, Tübingen, Stuttgart. Seit 1998. Registriertes Luftfahrtunternehmen, voll versichert.',
-    'canonical'   => 'https://www.ballonsport-krohmer.de/',
-    'og_image_key' => 'hero_main',
+    'title'             => 'Ballonfahrten über der Schwäbischen Alb seit 1998',
+    'description'       => 'Heißluftballonfahrten über der Schwäbischen Alb — Reutlingen, Tübingen, Stuttgart. Seit 1998. Registriertes Luftfahrtunternehmen, voll versichert.',
+    'canonical'         => 'https://www.ballonsport-krohmer.de/',
+    'og_image_key'      => 'hero_main',
+    'preload_image_key' => 'hero_main',
 ]);
 include __DIR__ . '/../src/partials/header.php';
 ?>

@@ -63,6 +63,7 @@ include __DIR__ . '/../src/partials/header.php';
 </div>
 
 <script>
+document.addEventListener('DOMContentLoaded', function () {
 (function () {
     'use strict';
     var items   = Array.from(document.querySelectorAll('.gallery__item[data-lightbox-src]'));
@@ -112,6 +113,7 @@ include __DIR__ . '/../src/partials/header.php';
         if (e.key === 'ArrowRight')  open(current + 1);
     });
 }());
+}); // DOMContentLoaded
 </script>
 
 <?php include __DIR__ . '/../src/partials/footer.php'; ?>

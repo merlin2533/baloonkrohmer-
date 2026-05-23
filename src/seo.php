@@ -5,12 +5,13 @@
  * seo_head() rendert den kompletten <head>-Block inkl. JSON-LD.
  *
  * Unterstützte $args-Schlüssel:
- *   title        (string)  — Seitentitel (wird mit Site-Name kombiniert)
- *   description  (string)  — Meta-Description
- *   canonical    (string)  — Kanonische URL (optional, Default: site_url)
- *   og_image_key (string)  — Image-Key für og:image (Default: og_default)
- *   json_ld      (array)   — Zusätzliches JSON-LD-Objekt (überschreibt LocalBusiness)
- *   noindex      (bool)    — Falls true: noindex,nofollow
+ *   title             (string)  — Seitentitel (wird mit Site-Name kombiniert)
+ *   description       (string)  — Meta-Description
+ *   canonical         (string)  — Kanonische URL (optional, Default: site_url)
+ *   og_image_key      (string)  — Image-Key für og:image (Default: og_default)
+ *   json_ld           (array)   — Zusätzliches JSON-LD-Objekt (überschreibt LocalBusiness)
+ *   noindex           (bool)    — Falls true: noindex,nofollow
+ *   preload_image_key (string)  — Image-Key des LCP-Hero-Bildes → <link rel="preload" as="image">
  */
 function seo_head(array $args = []): void
 {
@@ -21,11 +22,12 @@ function seo_head(array $args = []): void
     $phone     = $CFG['contact_phone'] ?? '+49 7127 21173';
     $email     = $CFG['contact_email'] ?? 'info@ballonsport-krohmer.de';
 
-    $pageTitle   = $args['title']       ?? '';
-    $description = $args['description'] ?? 'Ballonsport Krohmer — Heißluftballonfahrten über der Schwäbischen Alb seit 1998. Reutlingen, Tübingen, Stuttgart.';
-    $canonical   = $args['canonical']   ?? $siteUrl . '/';
-    $ogImageKey  = $args['og_image_key'] ?? 'og_default';
-    $noindex     = !empty($args['noindex']);
+    $pageTitle       = $args['title']             ?? '';
+    $description     = $args['description']       ?? 'Ballonsport Krohmer — Heißluftballonfahrten über der Schwäbischen Alb seit 1998. Reutlingen, Tübingen, Stuttgart.';
+    $canonical       = $args['canonical']         ?? $siteUrl . '/';
+    $ogImageKey      = $args['og_image_key']      ?? 'og_default';
+    $noindex         = !empty($args['noindex']);
+    $preloadImageKey = $args['preload_image_key'] ?? '';
 
     // Seitentitel zusammenstellen
     $fullTitle = $pageTitle !== ''
@@ -109,10 +111,20 @@ function seo_head(array $args = []): void
     <meta name="twitter:image"       content="<?= e($ogImageUrl) ?>">
 
     <!-- Favicon -->
-    <link rel="icon" type="image/svg+xml" href="/assets/img/logo.svg">
+    <link rel="icon" type="image/svg+xml" href="<?= e(asset('/assets/img/logo.svg')) ?>">
 
-    <!-- Stylesheet -->
-    <link rel="stylesheet" href="/assets/css/styles.css">
+    <!-- Preconnect für externe Ressourcen (Karte auf Kontakt-Seite) -->
+    <link rel="preconnect" href="https://www.openstreetmap.org" crossorigin>
+    <link rel="dns-prefetch" href="https://www.openstreetmap.org">
+
+    <!-- Stylesheet preload + load -->
+    <link rel="preload" href="<?= e(asset('/assets/css/styles.css')) ?>" as="style">
+    <link rel="stylesheet" href="<?= e(asset('/assets/css/styles.css')) ?>">
+
+<?php if ($preloadImageKey !== ''): ?>
+    <!-- LCP-Bild preload -->
+    <link rel="preload" as="image" href="<?= e(img_url($preloadImageKey)) ?>">
+<?php endif; ?>
 
     <!-- JSON-LD Structured Data -->
     <script type="application/ld+json">

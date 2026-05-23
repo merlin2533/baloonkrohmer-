@@ -9,22 +9,35 @@
  */
 
 /**
+ * Interner Cache für alle Content-Rows (wird beim ersten Zugriff befüllt).
+ * Gibt das gecachte Array zurück (als Referenz, damit set_content() es mutieren kann).
+ *
+ * @return array<string,string|null>
+ */
+function &_content_cache(): array
+{
+    static $cache = null;
+
+    if ($cache === null) {
+        $cache = [];
+        $rows = db()->query('SELECT key, value FROM content')->fetchAll(PDO::FETCH_ASSOC);
+        foreach ($rows as $row) {
+            $cache[$row['key']] = $row['value'];
+        }
+    }
+
+    return $cache;
+}
+
+/**
  * Liest einen Content-Wert aus der DB und gibt ihn HTML-escaped zurück.
  * Für HTML-Keys (*_html) stattdessen t_raw() verwenden.
  */
 function t(string $key, string $default = ''): string
 {
-    static $cache = [];
-
-    if (!isset($cache[$key])) {
-        $stmt = db()->prepare('SELECT value FROM content WHERE key = :key');
-        $stmt->execute([':key' => $key]);
-        $row = $stmt->fetch();
-        $cache[$key] = $row !== false ? $row['value'] : null;
-    }
-
-    $value = $cache[$key] ?? $default;
-    return e($value);
+    $cache = &_content_cache();
+    $value = array_key_exists($key, $cache) ? $cache[$key] : $default;
+    return e((string) $value);
 }
 
 /**
@@ -33,20 +46,13 @@ function t(string $key, string $default = ''): string
  */
 function t_raw(string $key, string $default = ''): string
 {
-    static $cache = [];
-
-    if (!isset($cache[$key])) {
-        $stmt = db()->prepare('SELECT value FROM content WHERE key = :key');
-        $stmt->execute([':key' => $key]);
-        $row = $stmt->fetch();
-        $cache[$key] = $row !== false ? $row['value'] : null;
-    }
-
-    return $cache[$key] ?? $default;
+    $cache = &_content_cache();
+    return array_key_exists($key, $cache) ? (string) $cache[$key] : $default;
 }
 
 /**
  * Speichert oder aktualisiert einen Content-Key in der DB.
+ * Invalidiert den In-Request-Cache für den betroffenen Key.
  */
 function set_content(string $key, string $value): void
 {
@@ -56,6 +62,10 @@ function set_content(string $key, string $value): void
          ON CONFLICT(key) DO UPDATE SET value = :value, updated_at = :now'
     );
     $stmt->execute([':key' => $key, ':value' => $value, ':now' => time()]);
+
+    // Cache aktualisieren
+    $cache        = &_content_cache();
+    $cache[$key]  = $value;
 }
 
 /**

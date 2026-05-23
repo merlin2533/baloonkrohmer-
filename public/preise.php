@@ -1,10 +1,11 @@
 <?php
 require __DIR__ . '/../src/bootstrap.php';
 seo_head([
-    'title'       => t('preise_title', 'Preise'),
-    'description' => t('preise_lead', 'Transparente Preise für Ballonfahrten — Erwachsene ab 235 €, Kinder ab 210 € pro Person.'),
-    'canonical'   => 'https://www.ballonsport-krohmer.de/preise.php',
-    'og_image_key' => 'preise_hero',
+    'title'             => t('preise_title', 'Preise'),
+    'description'       => t('preise_lead', 'Transparente Preise für Ballonfahrten — Erwachsene ab 235 €, Kinder ab 210 € pro Person.'),
+    'canonical'         => 'https://www.ballonsport-krohmer.de/preise.php',
+    'og_image_key'      => 'preise_hero',
+    'preload_image_key' => 'preise_hero',
 ]);
 include __DIR__ . '/../src/partials/header.php';
 ?>

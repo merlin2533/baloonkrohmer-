@@ -1,10 +1,11 @@
 <?php
 require __DIR__ . '/../src/bootstrap.php';
 seo_head([
-    'title'       => t('ballonfahren_title', 'Ballonfahren'),
-    'description' => t('ballonfahren_lead', 'Heißluftballonfahrten über der Schwäbischen Alb — Tübingen, Reutlingen, Stuttgart.'),
-    'canonical'   => 'https://www.ballonsport-krohmer.de/ballonfahren.php',
-    'og_image_key' => 'ballonfahren_hero',
+    'title'             => t('ballonfahren_title', 'Ballonfahren'),
+    'description'       => t('ballonfahren_lead', 'Heißluftballonfahrten über der Schwäbischen Alb — Tübingen, Reutlingen, Stuttgart.'),
+    'canonical'         => 'https://www.ballonsport-krohmer.de/ballonfahren.php',
+    'og_image_key'      => 'ballonfahren_hero',
+    'preload_image_key' => 'ballonfahren_hero',
 ]);
 include __DIR__ . '/../src/partials/header.php';
 ?>

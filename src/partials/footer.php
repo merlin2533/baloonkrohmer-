@@ -91,6 +91,6 @@
     </a>
 </div>
 
-<script src="/assets/js/main.js"></script>
+<script defer src="<?= e(asset('/assets/js/main.js')) ?>"></script>
 </body>
 </html>
