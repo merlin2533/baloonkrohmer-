@@ -14,6 +14,7 @@ Moderner Relaunch der Webseite ballonsport-krohmer.de in PHP 8 + SQLite. Alle Te
 - Mobile-First-Layout, lazy-loaded Bilder, Gzip-Komprimierung
 - Klare CTAs für Google Ads-Kampagnen (Click-to-Call, Gutschein, Kontaktformular)
 - Danke-Seite (`/danke.php`) als Conversion-Ziel, noindex gesetzt
+- Komplettes Offline-Mirror der Original-Seite unter `mirror/` (nicht webreachable, nur als Referenz)
 
 ---
 
