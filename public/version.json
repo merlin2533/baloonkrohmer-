@@ -1,7 +1,33 @@
 {
-  "generated_at": "2026-05-24T08:40:00+00:00",
-  "version": "1.0",
+  "generated_at": "2026-05-24T17:00:00+00:00",
+  "version": "1.1",
   "updates": [
+    {
+      "date": "2026-05-24",
+      "title": "Regionalseiten für Stuttgart, Reutlingen und Tübingen"
+,
+      "description": "Eigene Übersichtsseiten für die Hauptregionen — leichter zu finden für Interessierte aus diesen Städten und besser bei Google sichtbar."
+    },
+    {
+      "date": "2026-05-24",
+      "title": "Mehr Antworten auf häufige Fragen",
+      "description": "Die FAQ wurden von 12 auf 20 Fragen erweitert — z.B. zu Wunschstartorten, Gutschein-Gültigkeit, Fotos während der Fahrt und Senioren."
+    },
+    {
+      "date": "2026-05-24",
+      "title": "Mehr Inhalte rund um Ihre Ballonfahrt",
+      "description": "Ausführliche Beschreibungen zum Ablauf, zu unseren Ballonen, zur Aussicht und zu den enthaltenen Leistungen helfen bei der Entscheidung."
+    },
+    {
+      "date": "2026-05-24",
+      "title": "Bessere Sichtbarkeit bei Google",
+      "description": "Suchmaschinen verstehen jetzt deutlich besser, was die Seite anbietet — durch erweiterte strukturierte Daten, Brotkrumen-Navigation und passgenaue Inhalte zu den richtigen Suchanfragen."
+    },
+    {
+      "date": "2026-05-24",
+      "title": "Bilder werden wieder korrekt angezeigt",
+      "description": "Ein kleiner Darstellungsfehler in der Bildanzeige wurde behoben."
+    },
     {
       "date": "2026-05-23",
       "title": "Bedienung auf Smartphones verbessert",
