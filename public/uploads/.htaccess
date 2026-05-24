@@ -1,20 +1,13 @@
 # Sicherheits-Konfiguration für das Upload-Verzeichnis
-# PHP-Ausführung komplett deaktivieren
-php_flag engine off
+# Defense-in-Depth: Script-Dateien sperren, damit ein hochgeladenes
+# Bild mit z.B. ".php" im Namen nicht ausgefuehrt werden kann.
+#
+# Hinweis: php_flag und komplexe Negativ-Lookaheads wurden bewusst
+# entfernt, da Plesk/Shared-Hosting AllowOverride haeufig einschraenkt
+# (-> HTTP 500). Diese minimale Variante funktioniert ueberall.
 
-# Alle Script-Dateien sperren
-<FilesMatch "\.(php|phtml|phar|pl|py|jsp|asp|sh|cgi)$">
+<FilesMatch "\.(php|phtml|phps|phar|pl|py|jsp|asp|aspx|sh|cgi|htaccess)$">
     Require all denied
 </FilesMatch>
 
-# Nur Bild-Dateien erlauben (Defense-in-Depth)
-<FilesMatch "\.(jpg|jpeg|png|gif|webp|svg|ico)$">
-    Require all granted
-</FilesMatch>
-
-# Alle anderen Dateien sperren
-<FilesMatch "^(?!.*\.(jpg|jpeg|png|gif|webp|svg|ico|gitkeep)$).*$">
-    Require all denied
-</FilesMatch>
-
-Options -Indexes -ExecCGI
+Options -Indexes

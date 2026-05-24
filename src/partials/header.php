@@ -16,7 +16,7 @@ $current = $current ?? basename($_SERVER['PHP_SELF'] ?? 'index.php');
 
         <!-- Logo -->
         <a href="/" class="header__logo" aria-label="Ballonsport Krohmer — Startseite">
-            <?= img('logo', 'Ballonsport Krohmer', ['class' => 'header__logo-img', 'width' => '180', 'height' => '48']) ?>
+            <?= img('logo', 'Ballonsport Krohmer', ['class' => 'header__logo-img', 'width' => '180', 'height' => '48', 'priority' => true]) ?>
         </a>
 
         <!-- Hauptnavigation (Desktop) -->

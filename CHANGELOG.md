@@ -6,6 +6,16 @@ Die kundenfreundliche, nicht-technische Übersicht ist zusätzlich unter
 `public/version.json` öffentlich abrufbar.
 
 ## [1.1] – 2026-05-24
+## [1.1.1] – 2026-05-24
+
+### Behoben (kritisch)
+- Bilder lieferten auf Plesk-/Shared-Hosting HTTP 500, weil `public/uploads/.htaccess`
+  Apache-Direktiven verwendete (`php_flag engine off`, Negativ-Lookahead-Regex),
+  die bei eingeschränktem `AllowOverride` einen Server-Error auslösen.
+  Auf das Minimum reduziert: nur noch Script-Extensions blockieren + `Options -Indexes`.
+- Logo wird jetzt mit `fetchpriority="high"` und `loading="eager"` geladen
+  (vorher `loading="lazy"`, was Above-the-fold-Logos verlangsamen kann).
+
 
 ### Hinzugefügt
 - Drei neue Regionalseiten für Stuttgart, Reutlingen und Tübingen mit eigenem Service-Schema
