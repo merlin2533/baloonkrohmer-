@@ -14,13 +14,14 @@ function run_seed(PDO $pdo): void
     // -------------------------------------------------------------------------
     $contentRows = [
         // Hero
-        ['hero_title',          'Seit 1998 unvergessliches Erleben'],
-        ['hero_subtitle',       'Lautlos durch die Lüfte schweben — Ballonfahrten über der Schwäbischen Alb'],
-        ['hero_cta_primary',    'Jetzt Termin anfragen'],
-        ['hero_cta_secondary',  'Häufig gestellte Fragen'],
+        ['hero_title',          'Schwäbische Alb von oben — seit 1998 mit Familie Krohmer'],
+        ['hero_subtitle',       'Sonnenaufgang über Hohenzollern, lautlose Fahrt über die Alb-Hochfläche, Champagner-Taufe nach der Landung — Ihre Ballonfahrt ab 235 €.'],
+        ['hero_cta_primary',    'Termin sichern — ab 235 €'],
+        ['hero_cta_secondary',  'Häufige Fragen'],
+        ['hero_anchor',         '1,5 Stunden Flug · 4–5 Stunden Gesamterlebnis · 5 Passagiere + Pilot pro Korb'],
 
         // Home Intro
-        ['home_intro_html',     '<p>Willkommen bei Ballonsport Krohmer. Wir lassen Sie über die Schwäbische Alb und die Regionen rund um Stuttgart, Reutlingen, Tübingen, Balingen und Hechingen schweben — das ganze Jahr, immer dann, wenn Wind und Wetter perfekt sind.</p>'],
+        ['home_intro_html',     '<p>Willkommen bei Ballonsport Krohmer aus Pliezhausen. Seit 1998 begleiten wir Menschen auf ihre erste — und oft nicht letzte — Ballonfahrt über die Schwäbische Alb. Drei Heißluftballone, Startorte in Tübingen, Reutlingen und im Südraum Stuttgart, persönliche Betreuung von Familie Krohmer.</p>'],
 
         // USPs
         ['usp_1_title', 'Über 20 Jahre Erfahrung'],
@@ -34,12 +35,12 @@ function run_seed(PDO $pdo): void
 
         // Ballonfahren
         ['ballonfahren_title',      'Ballonfahren'],
-        ['ballonfahren_lead',       'Über die Schwäbische Alb, Stuttgart, Reutlingen, Tübingen, Balingen und Hechingen — lautlos, sicher und unvergesslich.'],
+        ['ballonfahren_lead',       'Über die Alb. Über den Wolken. Mit Ihnen — sicher, lautlos, persönlich.'],
         ['ballonfahren_intro_html', '<p>Feste Termine für Ballonfahrten gibt es nicht — denn das Wetter spielt die Hauptrolle. Wir prüfen die Witterung besonders kritisch und starten nur bei wirklich passenden Bedingungen.</p><p>Bevorzugte Startorte sind Tübingen, Reutlingen und Stuttgart. Auf Wunsch starten wir auch von Ihrem Wunschort.</p>'],
 
         // Ballone
         ['ballone_title', 'Unsere Ballone'],
-        ['ballone_lead',  'Drei Heißluftballone für jedes Erlebnis.'],
+        ['ballone_lead',  'Drei Ballone aus über 25 Jahren Erfahrung — vom kleinen Korb für fünf bis zur Gruppenfahrt mit bis zu vier Ballonen parallel.'],
 
         ['ballon_dogkr_name', 'D-OGKR — Krohmer'],
         ['ballon_dogkr_text', 'Unser Stammballon, benannt nach unserer Familie.'],
@@ -50,7 +51,7 @@ function run_seed(PDO $pdo): void
 
         // Preise
         ['preise_title',        'Preise'],
-        ['preise_lead',         'Transparente Tarife für Ihr Ballonerlebnis.'],
+        ['preise_lead',         'Klare Preise ab 235 € pro Person — inklusive Versicherung, Champagner-Taufe und Urkunde.'],
         ['preise_adult_label',  'Erwachsene'],
         ['preise_adult_price',  '235 €'],
         ['preise_adult_note',   'pro Person'],
@@ -59,12 +60,12 @@ function run_seed(PDO $pdo): void
         ['preise_youth_note',   'pro Person'],
         ['preise_group_label',  'Gruppen'],
         ['preise_group_price',  'auf Anfrage'],
-        ['preise_voucher_html',    '<p>Verschenken Sie ein unvergessliches Erlebnis: <strong>Geschenkgutscheine</strong> erhalten Sie per Telefon oder E-Mail.</p>'],
+        ['preise_voucher_html',    '<p>Verschenken Sie ein besonderes Erlebnis: <strong>Geschenkgutscheine</strong> erhalten Sie per Telefon oder E-Mail.</p>'],
         ['preise_insurance_html',  '<p>Für unsere Fahrgäste besteht eine Passagier-Haftpflicht- und Unfallversicherung.</p>'],
 
         // Galerie
         ['galerie_title', 'Bildergalerie'],
-        ['galerie_lead',  'Eindrücke aus über zwei Jahrzehnten Ballonfahren.'],
+        ['galerie_lead',  'Echte Bilder von echten Fahrten — über die Alb, durch das Schwäbische Mittelgebirge.'],
 
         // FAQ
         ['faq_title', 'Häufig gestellte Fragen'],

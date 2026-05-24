@@ -1,7 +1,13 @@
 {
-  "generated_at": "2026-05-24T17:00:00+00:00",
-  "version": "1.1",
+  "generated_at": "2026-05-24T20:00:00+00:00",
+  "version": "1.2",
   "updates": [
+    {
+      "date": "2026-05-24",
+      "title": "Neue Homepage-Elemente und frische Texte"
+,
+      "description": "Saisonaler Hinweis-Banner, Erfahrungs-Kennzahlen, Galerie-Vorschau und überarbeitete Texte machen die Startseite noch überzeugender."
+    },
     {
       "date": "2026-05-24",
       "title": "Regionalseiten für Stuttgart, Reutlingen und Tübingen"

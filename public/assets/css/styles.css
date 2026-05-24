@@ -1998,3 +1998,116 @@ h3 {
 .breadcrumbs__current {
   color: var(--c-ink-500);
 }
+
+/* =============================================================================
+   Homepage Quick-Wins 1.2
+   ============================================================================= */
+
+/* Aufgabe 1 — Hero-Anchor */
+.hero__anchor {
+  margin-top: var(--space-6);
+  color: rgba(255,255,255,.85);
+  font-size: 0.95rem;
+  font-weight: 500;
+  letter-spacing: .02em;
+}
+
+/* Aufgabe 2 — Saisonaler Banner */
+.season-banner {
+  background: var(--c-sky-700);
+  color: #fff;
+  padding-block: var(--space-3);
+  font-size: 0.95rem;
+}
+.season-banner__inner {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  flex-wrap: wrap;
+  justify-content: center;
+  text-align: center;
+}
+.season-banner__text { font-weight: 600; }
+.season-banner__cta {
+  color: #fff;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  font-weight: 600;
+}
+.season-banner__cta:hover { color: var(--c-sunset-400); }
+.season-banner svg { width: 1.25em; height: 1.25em; opacity: .9; }
+@media (max-width: 600px) {
+  .season-banner { font-size: 0.875rem; }
+  .season-banner__inner { gap: var(--space-2); }
+}
+
+/* Aufgabe 3 — Statistik-Bar */
+.stat-bar {
+  background: var(--c-paper);
+  padding-block: var(--space-8);
+  border-block: 1px solid var(--c-line);
+}
+.stat-bar__inner {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-6);
+  text-align: center;
+}
+@media (min-width: 700px) {
+  .stat-bar__inner {
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--space-8);
+  }
+}
+.stat-bar__item {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+.stat-bar__num {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 5vw, 2.75rem);
+  font-weight: 700;
+  color: var(--c-sunset-500);
+  line-height: 1;
+}
+.stat-bar__lbl {
+  font-size: 0.875rem;
+  color: var(--c-ink-500);
+  line-height: 1.3;
+}
+
+/* Aufgabe 4 — Galerie-Teaser */
+.gallery-teaser {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-3);
+}
+@media (min-width: 600px) {
+  .gallery-teaser { grid-template-columns: repeat(3, 1fr); }
+}
+@media (min-width: 900px) {
+  .gallery-teaser {
+    grid-template-columns: repeat(5, 1fr);
+    gap: var(--space-4);
+  }
+}
+.gallery-teaser__item {
+  display: block;
+  overflow: hidden;
+  border-radius: var(--radius-md);
+  aspect-ratio: 1;
+  box-shadow: var(--shadow-sm);
+  transition: transform var(--transition-base), box-shadow var(--transition-base);
+}
+@media (hover: hover) {
+  .gallery-teaser__item:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-md);
+  }
+}
+.gallery-teaser__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}

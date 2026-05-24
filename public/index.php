@@ -13,6 +13,7 @@ seo_head([
     'critical_css'      => $criticalCss,
 ]);
 include __DIR__ . '/../src/partials/header.php';
+include __DIR__ . '/../src/partials/season_banner.php';
 ?>
 
 <!-- =====================================================================
@@ -33,8 +34,34 @@ include __DIR__ . '/../src/partials/header.php';
                 <?= t('hero_cta_primary', 'Jetzt Termin anfragen') ?>
             </a>
             <a href="/faq.php" class="btn btn-ghost btn-ghost--light btn-lg">
-                <?= t('hero_cta_secondary', 'Häufig gestellte Fragen') ?>
+                <?= t('hero_cta_secondary', 'Häufige Fragen') ?>
             </a>
+        </div>
+        <p class="hero__anchor"><?= t('hero_anchor') ?></p>
+    </div>
+</section>
+
+<!-- =====================================================================
+     STATISTIK-BAR
+     ===================================================================== -->
+<?php $yearsSince1998 = (int)date('Y') - 1998; ?>
+<section class="stat-bar" aria-label="Eckdaten">
+    <div class="container stat-bar__inner">
+        <div class="stat-bar__item">
+            <span class="stat-bar__num">1998</span>
+            <span class="stat-bar__lbl">Gegründet</span>
+        </div>
+        <div class="stat-bar__item">
+            <span class="stat-bar__num"><?= $yearsSince1998 ?>+</span>
+            <span class="stat-bar__lbl">Jahre Erfahrung</span>
+        </div>
+        <div class="stat-bar__item">
+            <span class="stat-bar__num">3</span>
+            <span class="stat-bar__lbl">Heißluftballone</span>
+        </div>
+        <div class="stat-bar__item">
+            <span class="stat-bar__num">5+1</span>
+            <span class="stat-bar__lbl">Passagiere + Pilot pro Korb</span>
         </div>
     </div>
 </section>
@@ -209,6 +236,32 @@ include __DIR__ . '/../src/partials/header.php';
         <div class="prose prose--wide">
             <?= t_raw('home_erwartet_html') ?>
         </div>
+    </div>
+</section>
+
+<!-- =====================================================================
+     GALERIE-TEASER
+     ===================================================================== -->
+<section class="section" aria-labelledby="gallery-teaser-heading">
+    <div class="container">
+        <div class="section__header">
+            <h2 class="section__title" id="gallery-teaser-heading">Eindrücke aus über zwei Jahrzehnten</h2>
+            <p class="section__lead">Echte Bilder von echten Fahrten über die Alb.</p>
+        </div>
+        <div class="gallery-teaser">
+            <?php for ($i = 1; $i <= 5; $i++):
+                $num = str_pad((string)$i, 2, '0', STR_PAD_LEFT); ?>
+                <a href="/galerie.php" class="gallery-teaser__item">
+                    <?= img("gallery_{$num}", "Ballonfahrt — Eindruck {$i}", [
+                        'sizes' => '(max-width: 480px) 50vw, (max-width: 900px) 33vw, 240px',
+                        'class' => 'gallery-teaser__img'
+                    ]) ?>
+                </a>
+            <?php endfor; ?>
+        </div>
+        <p style="text-align:center; margin-top: var(--space-6)">
+            <a href="/galerie.php" class="btn btn-ghost">Alle 15 Bilder ansehen →</a>
+        </p>
     </div>
 </section>
 

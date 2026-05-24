@@ -5,6 +5,23 @@ Alle relevanten Änderungen an der Webseite werden hier dokumentiert.
 Die kundenfreundliche, nicht-technische Übersicht ist zusätzlich unter
 `public/version.json` öffentlich abrufbar.
 
+## [1.2] – 2026-05-24
+
+### Hinzugefügt
+- Saisonaler Banner (`season_banner.php`) direkt nach dem Header — zeigt je nach Monat Buchungs-, Saison- oder Gutschein-Hinweis
+- Statistik-Bar nach dem Hero mit dynamischer Jahresberechnung (1998, Jahre Erfahrung, 3 Ballone, 5+1)
+- Galerie-Teaser-Sektion (5 Bilder, Grid-Layout) zwischen "Was Sie erwartet" und "Perfekt als Geschenk"
+- Neuer Content-Key `hero_anchor` mit Flugzeit-Eckdaten unterhalb der Hero-CTAs
+- CSS-Block `/* Homepage Quick-Wins 1.2 */` in `styles.css` mit allen neuen Klassen
+
+### Geändert
+- Hero-Texte überarbeitet: konkreter Preis (235 €), Familie Krohmer, Hohenzollern-Referenz
+- Text-Refresh: `ballonfahren_lead`, `preise_lead`, `galerie_lead`, `ballone_lead`, `home_intro_html`, `preise_voucher_html` — keine wiederholten "lautlos/unvergesslich"-Formulierungen mehr
+- CTA-Button-Text verkürzt: "Häufige Fragen" statt "Häufig gestellte Fragen"
+
+### Migration
+- `bin/v12-content-update.php` — idempotentes Skript, aktualisiert 11 Content-Keys
+
 ## [1.1.1] – 2026-05-24
 
 ### Behoben (kritisch)
