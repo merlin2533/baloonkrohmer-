@@ -15,6 +15,19 @@ Moderner Relaunch der Webseite ballonsport-krohmer.de in PHP 8 + SQLite. Alle Te
 - Klare CTAs für Google Ads-Kampagnen (Click-to-Call, Gutschein, Kontaktformular)
 - Danke-Seite (`/danke.php`) als Conversion-Ziel, noindex gesetzt
 - Komplettes Offline-Mirror der Original-Seite unter `mirror/` (nicht webreachable, nur als Referenz)
+- Öffentliche, kundenfreundliche Versionsanzeige unter `public/version.json`
+
+---
+
+## Versionsstand & Changelog
+
+- **Kundenfreundliche Versionsübersicht (öffentlich):** `https://www.ihre-domain.de/version.json` (siehe `public/version.json`) — listet die letzten Änderungen ohne technische Details.
+- **Technischer Changelog:** [`CHANGELOG.md`](CHANGELOG.md) im Projekt-Wurzelverzeichnis.
+
+Bei jeder relevanten Änderung sollten beide Dateien aktualisiert werden:
+
+1. Neuen Eintrag oben in `CHANGELOG.md` ergänzen.
+2. Den entsprechenden kundenfreundlichen Eintrag in `public/version.json` einfügen (kein Tech-Jargon, kurze Beschreibung dessen, was Besucherinnen und Besucher davon haben).
 
 ---
 
