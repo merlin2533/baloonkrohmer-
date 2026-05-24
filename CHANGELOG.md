@@ -5,7 +5,6 @@ Alle relevanten Änderungen an der Webseite werden hier dokumentiert.
 Die kundenfreundliche, nicht-technische Übersicht ist zusätzlich unter
 `public/version.json` öffentlich abrufbar.
 
-## [1.1] – 2026-05-24
 ## [1.1.1] – 2026-05-24
 
 ### Behoben (kritisch)
@@ -16,6 +15,7 @@ Die kundenfreundliche, nicht-technische Übersicht ist zusätzlich unter
 - Logo wird jetzt mit `fetchpriority="high"` und `loading="eager"` geladen
   (vorher `loading="lazy"`, was Above-the-fold-Logos verlangsamen kann).
 
+## [1.1] – 2026-05-24
 
 ### Hinzugefügt
 - Drei neue Regionalseiten für Stuttgart, Reutlingen und Tübingen mit eigenem Service-Schema
