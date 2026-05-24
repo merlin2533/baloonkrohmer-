@@ -1,5 +1,6 @@
 vendor/
 data/*.sqlite
+data/.migration.lock
 config/config.php
 
 # /public/uploads/: alle User-Uploads werden ignoriert, ausser den
