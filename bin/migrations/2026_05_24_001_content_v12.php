@@ -1,5 +1,14 @@
 <?php
 /**
+ * MIGRATION (auto-applied) — v1.2 Content-Refresh
+ * Wird automatisch beim ersten Request nach Deploy ausgefuehrt.
+ * Aktualisiert Hero-Texte, Leads und ergaenzt hero_anchor.
+ *
+ * ACHTUNG: Diese Migration ueberschreibt admin-editierte Werte fuer
+ * die unten genannten Keys EINMALIG. Spaetere Admin-Edits bleiben
+ * erhalten.
+ */
+/**
  * Ballonsport Krohmer — Content-Update v1.2
  *
  * Idempotentes Migrations-Skript: Aktualisiert alle Content-Keys für

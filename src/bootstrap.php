@@ -54,9 +54,22 @@ require_once ROOT . '/src/content.php';
 require_once ROOT . '/src/images.php';
 require_once ROOT . '/src/auth.php';
 require_once ROOT . '/src/seo.php';
+require_once ROOT . '/src/migrations.php';
 
 // DB-Verbindung herstellen (löst Migration + ggf. Seed aus)
 db();
+
+// ---------------------------------------------------------------------------
+// Auto-Migrations: führt alle Dateien in /bin/migrations/ einmal aus.
+// Status wird in der Tabelle `migrations` festgehalten.
+// Bei Crash mitten in der Ausführung: nächste Request setzt fort.
+// ---------------------------------------------------------------------------
+try {
+    apply_pending_migrations();
+} catch (\Throwable $e) {
+    error_log('apply_pending_migrations() failed: ' . $e->getMessage());
+    // nicht abbrechen — die Site soll trotzdem laden
+}
 
 // ---------------------------------------------------------------------------
 // Output-Buffering + ETag (nur GET, kein Admin, keine aktive Session-Cookie-

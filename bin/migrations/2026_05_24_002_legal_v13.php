@@ -1,5 +1,9 @@
 <?php
 /**
+ * MIGRATION (auto-applied) — v1.3 Impressum + Datenschutz rechtskonform
+ * DDG/MStV/DSGVO/TDDDG-Update.
+ */
+/**
  * Migration v1.3 — Impressum und Datenschutz auf aktuellen Rechtsstand.
  *
  * Was wird aktualisiert?
@@ -16,7 +20,7 @@
  * Idempotent — kann beliebig oft laufen.
  */
 
-require __DIR__ . '/../src/bootstrap.php';
+
 
 $impressum = <<<'HTML'
 <h2>Impressum</h2>

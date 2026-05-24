@@ -59,6 +59,12 @@ require ROOT . '/src/partials/admin_layout_top.php';
         <div class="a-action-card__title">Webseite ansehen</div>
         <div class="a-action-card__sub">Live-Vorschau in neuem Tab</div>
     </a>
+
+    <a href="/admin/migrations.php" class="a-action-card">
+        <span class="a-action-card__icon">⚙️</span>
+        <div class="a-action-card__title">Migrationen</div>
+        <div class="a-action-card__sub">Status automatischer Updates</div>
+    </a>
 </div>
 
 <div class="a-stats">

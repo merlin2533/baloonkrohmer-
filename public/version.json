@@ -1,7 +1,12 @@
 {
-    "generated_at": "2026-05-24T12:10:15+00:00",
-    "version": "1.4",
+    "generated_at": "2026-05-24T12:16:35+00:00",
+    "version": "1.5",
     "updates": [
+        {
+            "date": "2026-05-24",
+            "title": "Updates werden automatisch eingespielt",
+            "description": "Neue Inhalte und rechtliche Anpassungen kommen jetzt automatisch auf die Live-Seite, sobald sie veroeffentlicht werden. Kein Warten, kein manueller Aufwand mehr."
+        },
         {
             "date": "2026-05-24",
             "title": "Bedienung auf Smartphones nochmal feinjustiert",

@@ -5,6 +5,21 @@ Alle relevanten Änderungen an der Webseite werden hier dokumentiert.
 Die kundenfreundliche, nicht-technische Übersicht ist zusätzlich unter
 `public/version.json` öffentlich abrufbar.
 
+## [1.5] - 2026-05-24
+
+### Hinzugefuegt
+- **Auto-Migration-System**: Neue Code-Updates werden beim ersten Request nach Deploy
+  automatisch eingespielt. Manuelles SSH/Skript-Ausfuehren entfaellt.
+- Tabelle `migrations` traegt mit, welche Migration bereits angewendet wurde
+- File-Lock verhindert parallele Ausfuehrung bei zeitgleichen Requests
+- Admin-UI `/admin/migrations.php`: Status-Uebersicht + manuelles Re-Trigger
+
+### Geaendert
+- `bin/v12-content-update.php` und `bin/v13-legal-update.php` verschoben nach `bin/migrations/`
+  (mit Datums-Praefix fuer chronologische Reihenfolge)
+- `src/bootstrap.php` ruft `apply_pending_migrations()` nach DB-Init
+
+
 ## [1.4] - 2026-05-24
 
 ### Verbessert (Mobile)
