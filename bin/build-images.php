@@ -23,6 +23,8 @@ declare(strict_types=1);
 
 const WIDTHS       = [480, 960, 1600];
 const JPG_QUALITY  = 82;
+// WEBP_QUALITY: aktuell 80. Reduktion auf 75 ergibt ca. 10–15 % mehr Größenersparnis
+// ohne sichtbaren Qualitätsverlust. Bei Bedarf hier anpassen und alle Varianten neu builden.
 const WEBP_QUALITY = 80;
 const THUMB_SIZE   = 600;
 

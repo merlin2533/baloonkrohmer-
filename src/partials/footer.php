@@ -54,9 +54,15 @@
                 </ul>
             </div>
 
-            <!-- Spalte 4: Rechtliches -->
+            <!-- Spalte 4: Regionen + Rechtliches -->
             <div class="footer__col">
-                <h3 class="footer__heading">Rechtliches</h3>
+                <h3 class="footer__heading">Regionen</h3>
+                <ul class="footer__nav-list">
+                    <li><a href="/region/stuttgart.php" class="footer__link">Ballonfahrt Stuttgart</a></li>
+                    <li><a href="/region/reutlingen.php" class="footer__link">Ballonfahrt Reutlingen</a></li>
+                    <li><a href="/region/tuebingen.php" class="footer__link">Ballonfahrt Tübingen</a></li>
+                </ul>
+                <h3 class="footer__heading" style="margin-top:var(--space-6)">Rechtliches</h3>
                 <ul class="footer__nav-list">
                     <li><a href="/impressum.php" class="footer__link">Impressum</a></li>
                     <li><a href="/datenschutz.php" class="footer__link">Datenschutz</a></li>

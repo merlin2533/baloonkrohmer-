@@ -1,12 +1,18 @@
 <?php
 require __DIR__ . '/../src/bootstrap.php';
+$breadcrumbs = [
+    ['name' => 'Start',   'url' => '/'],
+    ['name' => 'Galerie', 'url' => '/galerie.php'],
+];
 seo_head([
-    'title'       => t('galerie_title', 'Bildergalerie'),
-    'description' => t('galerie_lead', 'Eindrücke aus über zwei Jahrzehnten Ballonfahren über der Schwäbischen Alb.'),
-    'canonical'   => 'https://www.ballonsport-krohmer.de/galerie.php',
+    'title'        => t('galerie_title', 'Bildergalerie'),
+    'description'  => t('galerie_lead', 'Eindrücke aus über zwei Jahrzehnten Ballonfahren über der Schwäbischen Alb.'),
+    'canonical'    => 'https://www.ballonsport-krohmer.de/galerie.php',
     'og_image_key' => 'gallery_01',
+    'breadcrumbs'  => $breadcrumbs,
 ]);
 include __DIR__ . '/../src/partials/header.php';
+include __DIR__ . '/../src/partials/breadcrumbs.php';
 ?>
 
 <!-- =====================================================================

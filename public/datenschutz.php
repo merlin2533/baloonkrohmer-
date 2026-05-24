@@ -1,12 +1,19 @@
 <?php
 require __DIR__ . '/../src/bootstrap.php';
+$breadcrumbs = [
+    ['name' => 'Start',              'url' => '/'],
+    ['name' => 'Datenschutz',        'url' => '/datenschutz.php'],
+];
 seo_head([
-    'title'       => 'Datenschutzerklärung',
-    'description' => 'Datenschutzerklärung von Ballonsport Krohmer gemäß DSGVO.',
-    'canonical'   => 'https://www.ballonsport-krohmer.de/datenschutz.php',
+    'title'        => 'Datenschutzerklärung',
+    'description'  => 'Datenschutzerklärung von Ballonsport Krohmer gemäß DSGVO.',
+    'canonical'    => 'https://www.ballonsport-krohmer.de/datenschutz.php',
     'og_image_key' => 'og_default',
+    'breadcrumbs'  => $breadcrumbs,
+    'noindex'      => true,
 ]);
 include __DIR__ . '/../src/partials/header.php';
+include __DIR__ . '/../src/partials/breadcrumbs.php';
 ?>
 
 <!-- =====================================================================

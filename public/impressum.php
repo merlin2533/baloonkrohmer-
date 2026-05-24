@@ -1,12 +1,19 @@
 <?php
 require __DIR__ . '/../src/bootstrap.php';
+$breadcrumbs = [
+    ['name' => 'Start',    'url' => '/'],
+    ['name' => 'Impressum','url' => '/impressum.php'],
+];
 seo_head([
-    'title'       => 'Impressum',
-    'description' => 'Impressum von Ballonsport Krohmer — Angaben gemäß § 5 TMG.',
-    'canonical'   => 'https://www.ballonsport-krohmer.de/impressum.php',
+    'title'        => 'Impressum',
+    'description'  => 'Impressum von Ballonsport Krohmer — Angaben gemäß § 5 TMG.',
+    'canonical'    => 'https://www.ballonsport-krohmer.de/impressum.php',
     'og_image_key' => 'og_default',
+    'breadcrumbs'  => $breadcrumbs,
+    'noindex'      => true,
 ]);
 include __DIR__ . '/../src/partials/header.php';
+include __DIR__ . '/../src/partials/breadcrumbs.php';
 ?>
 
 <!-- =====================================================================

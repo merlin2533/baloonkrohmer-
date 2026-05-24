@@ -87,14 +87,21 @@ if (!in_array($getBetreff, $allowedBetreff, true)) {
     }
 }
 
+$breadcrumbs = [
+    ['name' => 'Start',   'url' => '/'],
+    ['name' => 'Kontakt', 'url' => '/kontakt.php'],
+];
 seo_head([
     'title'             => t('kontakt_title', 'Kontakt'),
     'description'       => t('kontakt_lead', 'Kontaktieren Sie uns für Anfragen rund um Ballonfahrten, Gutscheine und Gruppenfahrten.'),
     'canonical'         => 'https://www.ballonsport-krohmer.de/kontakt.php',
     'og_image_key'      => 'kontakt_hero',
     'preload_image_key' => 'kontakt_hero',
+    'osm'               => true,
+    'breadcrumbs'       => $breadcrumbs,
 ]);
 include __DIR__ . '/../src/partials/header.php';
+include __DIR__ . '/../src/partials/breadcrumbs.php';
 ?>
 
 <!-- =====================================================================
@@ -312,6 +319,35 @@ include __DIR__ . '/../src/partials/header.php';
                 </form>
             </div><!-- /.kontakt-form-wrap -->
         </div><!-- /.kontakt-layout -->
+    </div>
+</section>
+
+<!-- =====================================================================
+     ANFAHRT + ERREICHBARKEIT
+     ===================================================================== -->
+<section class="section section--alt" aria-labelledby="anfahrt-heading">
+    <div class="container">
+        <div class="section__header">
+            <h2 class="section__title" id="anfahrt-heading">Anfahrt &amp; Erreichbarkeit</h2>
+        </div>
+        <div class="grid grid--2">
+            <div class="card">
+                <div class="card__body">
+                    <h3 class="card__title" style="margin-bottom:var(--space-4)">Mit dem Auto</h3>
+                    <div class="prose">
+                        <?= t_raw('kontakt_anfahrt_html') ?>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card__body">
+                    <h3 class="card__title" style="margin-bottom:var(--space-4)">Außerhalb der Bürozeiten</h3>
+                    <div class="prose">
+                        <?= t_raw('kontakt_offhours_html') ?>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </section>
 

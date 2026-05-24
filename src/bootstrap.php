@@ -57,3 +57,35 @@ require_once ROOT . '/src/seo.php';
 
 // DB-Verbindung herstellen (löst Migration + ggf. Seed aus)
 db();
+
+// ---------------------------------------------------------------------------
+// Output-Buffering + ETag (nur GET, kein Admin, keine aktive Session-Cookie-
+// Ausgabe in diesem Request)
+// ---------------------------------------------------------------------------
+if (
+    ($_SERVER['REQUEST_METHOD'] ?? '') === 'GET'
+    && !str_starts_with($_SERVER['REQUEST_URI'] ?? '', '/admin')
+    && !headers_sent()
+) {
+    ob_start(static function (string $buffer) {
+        // ETag nur setzen wenn kein Set-Cookie-Header aktiv ist
+        $headers = headers_list();
+        $hasCookie = false;
+        foreach ($headers as $h) {
+            if (stripos($h, 'Set-Cookie:') === 0) {
+                $hasCookie = true;
+                break;
+            }
+        }
+        if (!$hasCookie) {
+            $etag = '"' . sha1($buffer) . '"';
+            header('ETag: ' . $etag);
+            $ifNoneMatch = $_SERVER['HTTP_IF_NONE_MATCH'] ?? '';
+            if ($ifNoneMatch === $etag) {
+                http_response_code(304);
+                return '';
+            }
+        }
+        return $buffer;
+    });
+}

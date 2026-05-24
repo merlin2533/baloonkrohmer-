@@ -1,12 +1,18 @@
 <?php
 require __DIR__ . '/../src/bootstrap.php';
+$breadcrumbs = [
+    ['name' => 'Start',         'url' => '/'],
+    ['name' => 'Unsere Ballone','url' => '/unsere-ballone.php'],
+];
 seo_head([
-    'title'       => t('ballone_title', 'Unsere Ballone'),
-    'description' => t('ballone_lead', 'Drei Heißluftballone für jedes Erlebnis — von Einzelgästen bis zur Gruppe.'),
-    'canonical'   => 'https://www.ballonsport-krohmer.de/unsere-ballone.php',
+    'title'        => t('ballone_title', 'Unsere Ballone'),
+    'description'  => t('ballone_lead', 'Drei Heißluftballone für jedes Erlebnis — von Einzelgästen bis zur Gruppe.'),
+    'canonical'    => 'https://www.ballonsport-krohmer.de/unsere-ballone.php',
     'og_image_key' => 'ballon_dogkr',
+    'breadcrumbs'  => $breadcrumbs,
 ]);
 include __DIR__ . '/../src/partials/header.php';
+include __DIR__ . '/../src/partials/breadcrumbs.php';
 ?>
 
 <!-- =====================================================================
@@ -99,6 +105,21 @@ include __DIR__ . '/../src/partials/header.php';
                 <p class="info-block__text">Wir können bis zu vier Ballone gleichzeitig in die Luft schicken — das macht bis zu 25 Passagiere auf einmal möglich. Ideal für Firmenevents, Vereinsausflüge oder besondere Anlässe.</p>
                 <a href="/kontakt.php?betreff=Gruppenfahrt" class="btn btn-primary">Gruppenanfrage stellen</a>
             </div>
+        </div>
+    </div>
+</section>
+
+<!-- =====================================================================
+     SO FUNKTIONIERT EIN HEIßLUFTBALLON
+     ===================================================================== -->
+<section class="section" aria-labelledby="technik-heading">
+    <div class="container">
+        <div class="section__header">
+            <h2 class="section__title" id="technik-heading">So funktioniert ein Heißluftballon</h2>
+            <p class="section__lead">Physik, die begeistert — kurz und verständlich erklärt.</p>
+        </div>
+        <div class="prose prose--wide">
+            <?= t_raw('ballone_technik_html') ?>
         </div>
     </div>
 </section>

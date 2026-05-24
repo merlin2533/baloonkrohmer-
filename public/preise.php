@@ -1,13 +1,38 @@
 <?php
 require __DIR__ . '/../src/bootstrap.php';
+$breadcrumbs = [
+    ['name' => 'Start', 'url' => '/'],
+    ['name' => 'Preise','url' => '/preise.php'],
+];
 seo_head([
     'title'             => t('preise_title', 'Preise'),
     'description'       => t('preise_lead', 'Transparente Preise für Ballonfahrten — Erwachsene ab 235 €, Kinder ab 210 € pro Person.'),
     'canonical'         => 'https://www.ballonsport-krohmer.de/preise.php',
     'og_image_key'      => 'preise_hero',
     'preload_image_key' => 'preise_hero',
+    'breadcrumbs'       => $breadcrumbs,
+    'extra_json_ld'     => [[
+        '@context'    => 'https://schema.org',
+        '@type'       => 'Service',
+        'name'        => 'Heißluftballonfahrt',
+        'serviceType' => 'Heißluftballonfahrt',
+        'provider'    => [
+            '@type' => 'LocalBusiness',
+            'name'  => 'Ballonsport Krohmer',
+            'url'   => 'https://www.ballonsport-krohmer.de/',
+        ],
+        'offers' => [
+            '@type'         => 'Offer',
+            'price'         => '235',
+            'priceCurrency' => 'EUR',
+            'description'   => 'Ballonfahrt pro Erwachsenem, inklusive Versicherung, Champagner-Taufe und Urkunde.',
+            'url'           => 'https://www.ballonsport-krohmer.de/preise.php',
+        ],
+        'url' => 'https://www.ballonsport-krohmer.de/preise.php',
+    ]],
 ]);
 include __DIR__ . '/../src/partials/header.php';
+include __DIR__ . '/../src/partials/breadcrumbs.php';
 ?>
 
 <!-- =====================================================================
@@ -131,6 +156,42 @@ include __DIR__ . '/../src/partials/header.php';
                 <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"/>
             </svg>
             <?= t_raw('preise_insurance_html') ?>
+        </div>
+    </div>
+</section>
+
+<!-- =====================================================================
+     WAS IST ENTHALTEN
+     ===================================================================== -->
+<section class="section" aria-labelledby="leistungen-heading">
+    <div class="container">
+        <div class="grid grid--2">
+            <div>
+                <h2 class="section__title" id="leistungen-heading" style="margin-bottom:var(--space-6)">Was ist im Preis enthalten?</h2>
+                <div class="prose">
+                    <?= t_raw('preise_included_html') ?>
+                </div>
+            </div>
+            <div>
+                <h2 class="section__title" style="margin-bottom:var(--space-6)">Gruppenfahrten</h2>
+                <div class="prose">
+                    <?= t_raw('preise_gruppe_html') ?>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- =====================================================================
+     GUTSCHEIN DETAIL
+     ===================================================================== -->
+<section class="section section--alt" aria-labelledby="gutschein-detail-heading">
+    <div class="container">
+        <div class="section__header">
+            <h2 class="section__title" id="gutschein-detail-heading">Alles zum Geschenkgutschein</h2>
+        </div>
+        <div class="prose prose--wide">
+            <?= t_raw('preise_gutschein_detail_html') ?>
         </div>
     </div>
 </section>

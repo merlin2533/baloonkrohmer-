@@ -1,13 +1,50 @@
 <?php
 require __DIR__ . '/../src/bootstrap.php';
+$breadcrumbs = [
+    ['name' => 'Start',       'url' => '/'],
+    ['name' => 'Ballonfahren','url' => '/ballonfahren.php'],
+];
 seo_head([
     'title'             => t('ballonfahren_title', 'Ballonfahren'),
     'description'       => t('ballonfahren_lead', 'Heißluftballonfahrten über der Schwäbischen Alb — Tübingen, Reutlingen, Stuttgart.'),
     'canonical'         => 'https://www.ballonsport-krohmer.de/ballonfahren.php',
     'og_image_key'      => 'ballonfahren_hero',
     'preload_image_key' => 'ballonfahren_hero',
+    'breadcrumbs'       => $breadcrumbs,
+    'extra_json_ld'     => [[
+        '@context'    => 'https://schema.org',
+        '@type'       => 'Service',
+        'name'        => 'Heißluftballonfahrt',
+        'serviceType' => 'Heißluftballonfahrt',
+        'provider'    => [
+            '@type' => 'LocalBusiness',
+            'name'  => 'Ballonsport Krohmer',
+            'url'   => 'https://www.ballonsport-krohmer.de/',
+        ],
+        'areaServed'  => [
+            ['@type' => 'City', 'name' => 'Reutlingen'],
+            ['@type' => 'City', 'name' => 'Tübingen'],
+            ['@type' => 'City', 'name' => 'Stuttgart'],
+            ['@type' => 'City', 'name' => 'Balingen'],
+            ['@type' => 'City', 'name' => 'Hechingen'],
+        ],
+        'offers' => [
+            '@type'         => 'Offer',
+            'price'         => '235',
+            'priceCurrency' => 'EUR',
+            'priceSpecification' => [
+                '@type'            => 'UnitPriceSpecification',
+                'price'            => '235',
+                'priceCurrency'    => 'EUR',
+                'unitText'         => 'pro Person',
+            ],
+        ],
+        'description' => 'Erleben Sie die Schwäbische Alb aus der Vogelperspektive — ca. 1,5 Stunden Flugzeit, Champagner-Taufe nach der Landung. Startorte: Reutlingen, Tübingen, Stuttgart.',
+        'url'         => 'https://www.ballonsport-krohmer.de/ballonfahren.php',
+    ]],
 ]);
 include __DIR__ . '/../src/partials/header.php';
+include __DIR__ . '/../src/partials/breadcrumbs.php';
 ?>
 
 <!-- =====================================================================
@@ -172,6 +209,67 @@ include __DIR__ . '/../src/partials/header.php';
                 </div>
             </div>
 
+        </div>
+    </div>
+</section>
+
+<!-- =====================================================================
+     ABLAUF EINER BALLONFAHRT
+     ===================================================================== -->
+<section class="section section--alt" aria-labelledby="ablauf-heading">
+    <div class="container">
+        <div class="section__header">
+            <h2 class="section__title" id="ablauf-heading">Ablauf einer Ballonfahrt von A bis Z</h2>
+            <p class="section__lead">So erleben Sie Ihren Ballon-Tag mit uns — von der Begrüßung bis zur Rückfahrt.</p>
+        </div>
+        <div class="prose prose--wide">
+            <?= t_raw('ballonfahren_ablauf_html') ?>
+        </div>
+    </div>
+</section>
+
+<!-- =====================================================================
+     AUSSICHT — WAS SIEHT MAN VON OBEN
+     ===================================================================== -->
+<section class="section" aria-labelledby="aussicht-heading">
+    <div class="container">
+        <div class="section__header">
+            <h2 class="section__title" id="aussicht-heading">Was Sie von oben sehen</h2>
+            <p class="section__lead">Die Schwäbische Alb aus einer ganz neuen Perspektive.</p>
+        </div>
+        <div class="prose prose--wide">
+            <?= t_raw('ballonfahren_aussicht_html') ?>
+        </div>
+    </div>
+</section>
+
+<!-- =====================================================================
+     SAISONALE HINWEISE
+     ===================================================================== -->
+<section class="section section--alt" aria-labelledby="saison-heading">
+    <div class="container">
+        <div class="section__header">
+            <h2 class="section__title" id="saison-heading">Wann ist die schönste Jahreszeit?</h2>
+        </div>
+        <div class="grid grid--3">
+            <div class="card">
+                <div class="card__body">
+                    <h3 class="card__title">Frühling</h3>
+                    <p class="card__text">Blühende Obstwiesen und das erste Grün auf der Alb — der Frühling bietet eindrucksvolle Farben und meist stabile Morgenlagen. Ideal für Sonnenaufgangsfahrten.</p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card__body">
+                    <h3 class="card__title">Sommer</h3>
+                    <p class="card__text">Lange Abende laden zu Abendfahrten ein. Die Sicht reicht bei klarer Luft bis zu den Alpen. Beliebt für besondere Anlässe und romantische Zweifahrten.</p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card__body">
+                    <h3 class="card__title">Herbst</h3>
+                    <p class="card__text">Das Farbspiel der Laubbäume macht den Herbst zur vielleicht schönsten Jahreszeit. Nebelfelder im Tal und ein goldener Horizont schaffen unvergessliche Bilder.</p>
+                </div>
+            </div>
         </div>
     </div>
 </section>

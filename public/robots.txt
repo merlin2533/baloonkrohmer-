@@ -1,7 +1,8 @@
 User-agent: *
 Disallow: /admin/
-Disallow: /uploads/
+Disallow: /data/
 Disallow: /danke.php
+Allow: /region/
 Allow: /
 
 Sitemap: https://www.ballonsport-krohmer.de/sitemap.xml

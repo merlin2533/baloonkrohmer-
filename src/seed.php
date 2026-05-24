@@ -106,6 +106,67 @@ function run_seed(PDO $pdo): void
         ['faq_q12',     'Was kostet eine Ballonfahrt?'],
         ['faq_a12_html', '<p>Alle aktuellen Preise finden Sie auf der Seite <a href="/preise.php">Preise</a>.</p>'],
 
+        // Ballonfahren — neue SEO-Blöcke
+        ['ballonfahren_ablauf_html', '<p>Der vollständige Ablauf einer Ballonfahrt: Begrüßung, Wetter-Check, Ballon aufrüsten, Start, ca. 1,5 Stunden Fahrt, Landung, Champagner-Taufe und Rücktransport.</p>'],
+        ['ballonfahren_aussicht_html', '<p>Von oben sehen Sie die Schwäbische Alb mit Burg Hohenzollern, Schloss Lichtenstein, den Reutlinger Alb-Trauf, die Filderebene und bei klarer Sicht bis zu den Alpen.</p>'],
+
+        // Ballone — Technik
+        ['ballone_technik_html', '<p>Ein Heißluftballon funktioniert nach dem Prinzip der Auftriebskraft: Erhitzte Luft ist leichter als kalte Luft. Der Brenner erhitzt die Luft in der Hülle auf bis zu 120 °C. Die Fahrtrichtung bestimmt der Wind; der Pilot steuert die Höhe.</p>'],
+
+        // Home — neue Blöcke
+        ['home_region_html',   '<p>Die Schwäbische Alb ist unsere Heimat. Von Pliezhausen aus starten wir zu Ballonfahrten über Reutlingen, Tübingen, Stuttgart, Balingen und Hechingen.</p>'],
+        ['home_erwartet_html', '<p>Begrüßung und Wetter-Briefing, Aufrüsten des Ballons, Start, ca. 1,5 h Fahrt, Landung, Champagner-Taufe mit Urkunde und Rücktransport zum Startplatz.</p>'],
+
+        // Preise — neue Blöcke
+        ['preise_included_html',       '<ul><li>Sicherheits-Briefing</li><li>Ca. 1,5 h Ballonfahrt</li><li>Passagier-Haftpflicht- und Unfallversicherung</li><li>Champagner nach Landung</li><li>Ballonfahrer-Taufe und Urkunde</li><li>Rücktransport zum Startplatz</li></ul>'],
+        ['preise_gruppe_html',         '<p>Für Gruppen ab 6 Personen individuelle Angebote. Bis zu 4 Ballone gleichzeitig, bis zu 25 Passagiere. Anfrage per E-Mail oder Telefon.</p>'],
+        ['preise_gutschein_detail_html','<p>Gutscheine per Telefon oder E-Mail erhältlich. Lange Gültigkeitsdauer, Termin nach Verfügbarkeit. Beliebt als Geschenk für Geburtstage, Hochzeitstage, Jubiläen.</p>'],
+
+        // Kontakt — neue Blöcke
+        ['kontakt_anfahrt_html',  '<p>Pliezhausen liegt zwischen Tübingen und Reutlingen, ca. 15 km südlich von Stuttgart. Von der A8 Abfahrt Denkendorf, von der A81 Abfahrt Stuttgart-Vaihingen über die B27.</p>'],
+        ['kontakt_offhours_html', '<p>Außerhalb der Bürozeiten erreichen Sie uns jederzeit per E-Mail: <a href="mailto:info@ballonsport-krohmer.de">info@ballonsport-krohmer.de</a>. Wir antworten am nächsten Werktag.</p>'],
+
+        // FAQ — neue Fragen 13–20
+        ['faq_q13', 'Kann man auf einen Wunschort starten?'],
+        ['faq_a13_html', '<p>Individuelle Startorte sind nach Rücksprache möglich, wenn der Ort geeignet ist. Sprechen Sie uns an.</p>'],
+
+        ['faq_q14', 'Was passiert bei schlechtem Wetter?'],
+        ['faq_a14_html', '<p>Bei ungeeignetem Wetter sagen wir ab und vergeben einen neuen Termin. Sie werden so früh wie möglich informiert.</p>'],
+
+        ['faq_q15', 'Wie lange ist ein Gutschein gültig?'],
+        ['faq_a15_html', '<p>Unsere Gutscheine haben eine großzügige Gültigkeitsdauer. Termin nach Verfügbarkeit — frühzeitig anfragen.</p>'],
+
+        ['faq_q16', 'Kann man die Ballonfahrt fotografieren oder filmen?'],
+        ['faq_a16_html', '<p>Ja, Smartphones und kompakte Kameras sind im Korb gut geeignet. Bitte sichern Sie Geräte mit einem Trageband.</p>'],
+
+        ['faq_q17', 'Werden Speisen oder Getränke gereicht?'],
+        ['faq_a17_html', '<p>Nach der Landung gibt es Champagner (für Kinder auch alkoholfrei) zur Ballon-Taufe. Speisen sind nicht enthalten.</p>'],
+
+        ['faq_q18', 'Ist eine Ballonfahrt für Senioren geeignet?'],
+        ['faq_a18_html', '<p>Grundsätzlich ja, viele ältere Gäste fahren mit. Voraussetzung: stehend im Korb bleiben und selbstständig einsteigen können.</p>'],
+
+        ['faq_q19', 'Kann ich meinen Hund mitnehmen?'],
+        ['faq_a19_html', '<p>Nein, Tiere dürfen aus luftfahrtrechtlichen Gründen nicht mit in den Korb.</p>'],
+
+        ['faq_q20', 'Wo lande ich? Wie komme ich zurück?'],
+        ['faq_a20_html', '<p>Der Landeplatz ist windabhängig. Unsere Begleitmannschaft holt Sie mit Fahrzeugen ab und bringt Sie zurück zum Startplatz (inklusive).</p>'],
+
+        // Region-Landingpages
+        ['region_stuttgart_title',     'Ballonfahrt Stuttgart und Umgebung'],
+        ['region_stuttgart_desc',      'Heißluftballon fahren über Stuttgart — Ballonsport Krohmer aus Pliezhausen. Seit 1998.'],
+        ['region_stuttgart_subtitle',  'Mit Ballonsport Krohmer über den Stuttgarter Kessel und die Schwäbische Alb schweben'],
+        ['region_stuttgart_intro_html','<p>Stuttgart und Umgebung aus der Vogelperspektive — Ballonsport Krohmer bietet Ballonfahrten im Südraum Stuttgart und auf den Fildern an. Bitte anfragen für Verfügbarkeit.</p>'],
+
+        ['region_reutlingen_title',     'Ballonfahrt Reutlingen'],
+        ['region_reutlingen_desc',      'Heißluftballon fahren über Reutlingen und dem Alb-Trauf — Ballonsport Krohmer aus Pliezhausen.'],
+        ['region_reutlingen_subtitle',  'Über Reutlingen, den Alb-Trauf und die Schwäbische Alb — mit Ballonsport Krohmer'],
+        ['region_reutlingen_intro_html','<p>Reutlingen liegt am Fuß des Albtraufs — ein idealer Ausgangspunkt für Ballonfahrten. Ballonsport Krohmer ist in Pliezhausen zu Hause, nur wenige Kilometer entfernt.</p>'],
+
+        ['region_tuebingen_title',     'Ballonfahrt Tübingen'],
+        ['region_tuebingen_desc',      'Heißluftballon fahren über Tübingen, dem Neckar und der Schwäbischen Alb — Ballonsport Krohmer aus Pliezhausen.'],
+        ['region_tuebingen_subtitle',  'Über Tübingen, den Neckar und die Alb — mit Ballonsport Krohmer in die Lüfte'],
+        ['region_tuebingen_intro_html','<p>Tübingen aus der Luft — mit Blick auf Schloss Hohentübingen, Stiftskirche und Neckartal. Ballonsport Krohmer startet im Tübinger Raum.</p>'],
+
         // Kontakt
         ['kontakt_title',        'Kontakt'],
         ['kontakt_lead',         'Wir freuen uns auf Ihre Anfrage.'],

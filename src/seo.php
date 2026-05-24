@@ -9,9 +9,13 @@
  *   description       (string)  — Meta-Description
  *   canonical         (string)  — Kanonische URL (optional, Default: site_url)
  *   og_image_key      (string)  — Image-Key für og:image (Default: og_default)
- *   json_ld           (array)   — Zusätzliches JSON-LD-Objekt (überschreibt LocalBusiness)
+ *   json_ld           (array)   — Erstes JSON-LD-Objekt (überschreibt LocalBusiness)
+ *   extra_json_ld     (array[]) — Weitere JSON-LD-Blöcke als Array von Arrays
  *   noindex           (bool)    — Falls true: noindex,nofollow
  *   preload_image_key (string)  — Image-Key des LCP-Hero-Bildes → <link rel="preload" as="image">
+ *   breadcrumbs       (array)   — BreadcrumbList-Daten [['name'=>'...','url'=>'...'],...]
+ *   critical_css      (string)  — Above-the-fold CSS, inline in <style> eingebettet
+ *   osm               (bool)    — Falls true: Preconnect für OpenStreetMap hinzufügen
  */
 function seo_head(array $args = []): void
 {
@@ -28,6 +32,10 @@ function seo_head(array $args = []): void
     $ogImageKey      = $args['og_image_key']      ?? 'og_default';
     $noindex         = !empty($args['noindex']);
     $preloadImageKey = $args['preload_image_key'] ?? '';
+    $criticalCss     = $args['critical_css']      ?? '';
+    $osmPreconnect   = !empty($args['osm']);
+    $breadcrumbs     = $args['breadcrumbs']       ?? [];
+    $extraJsonLd     = $args['extra_json_ld']     ?? [];
 
     // Seitentitel zusammenstellen
     $fullTitle = $pageTitle !== ''
@@ -83,6 +91,27 @@ function seo_head(array $args = []): void
 
     $robotsContent = $noindex ? 'noindex,nofollow' : 'index,follow';
 
+    // BreadcrumbList JSON-LD
+    $breadcrumbJsonLd = null;
+    if (!empty($breadcrumbs)) {
+        $breadcrumbItems = [];
+        foreach ($breadcrumbs as $idx => $crumb) {
+            $breadcrumbItems[] = [
+                '@type'    => 'ListItem',
+                'position' => $idx + 1,
+                'name'     => $crumb['name'],
+                'item'     => str_starts_with($crumb['url'], 'http')
+                    ? $crumb['url']
+                    : $siteUrl . '/' . ltrim($crumb['url'], '/'),
+            ];
+        }
+        $breadcrumbJsonLd = [
+            '@context'        => 'https://schema.org',
+            '@type'           => 'BreadcrumbList',
+            'itemListElement' => $breadcrumbItems,
+        ];
+    }
+
     // Ausgabe
     ?>
 <!DOCTYPE html>
@@ -116,9 +145,16 @@ function seo_head(array $args = []): void
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="<?= e(asset('/assets/img/logo.svg')) ?>">
 
-    <!-- Preconnect für externe Ressourcen (Karte auf Kontakt-Seite) -->
+<?php if ($osmPreconnect): ?>
+    <!-- Preconnect für OpenStreetMap (nur auf Seiten mit eingebetteter Karte) -->
     <link rel="preconnect" href="https://www.openstreetmap.org" crossorigin>
     <link rel="dns-prefetch" href="https://www.openstreetmap.org">
+<?php endif; ?>
+
+<?php if ($criticalCss !== ''): ?>
+    <!-- Critical CSS (Above-the-fold, inline) -->
+    <style><?= $criticalCss ?></style>
+<?php endif; ?>
 
     <!-- Stylesheet preload + load -->
     <link rel="preload" href="<?= e(asset('/assets/css/styles.css')) ?>" as="style">
@@ -149,10 +185,25 @@ function seo_head(array $args = []): void
 <?php endif; ?>
 <?php endif; ?>
 
-    <!-- JSON-LD Structured Data -->
+    <!-- JSON-LD Structured Data — LocalBusiness -->
     <script type="application/ld+json">
 <?= json_encode($jsonLd, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES | JSON_PRETTY_PRINT) ?>
     </script>
+
+<?php if ($breadcrumbJsonLd !== null): ?>
+    <!-- JSON-LD Structured Data — BreadcrumbList -->
+    <script type="application/ld+json">
+<?= json_encode($breadcrumbJsonLd, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES | JSON_PRETTY_PRINT) ?>
+    </script>
+<?php endif; ?>
+
+<?php foreach ($extraJsonLd as $extraBlock): ?>
+    <!-- JSON-LD Structured Data — Zusatz -->
+    <script type="application/ld+json">
+<?= json_encode($extraBlock, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES | JSON_PRETTY_PRINT) ?>
+    </script>
+<?php endforeach; ?>
+
 <?php
 }
 // Hinweis: seo_head() gibt keine </head> oder <body> aus — das übernimmt header.php
