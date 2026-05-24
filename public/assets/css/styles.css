@@ -2111,3 +2111,177 @@ h3 {
   height: 100%;
   object-fit: cover;
 }
+
+/* ===========================================================================
+   Mobile Refinements 1.4 — Feinschliff für die neuen Sektionen (Quick-Wins 1.2)
+   und allgemeine Mobile-Verbesserungen.
+   =========================================================================== */
+
+/* ---- Hero auf sehr kleinen Screens ---- */
+@media (max-width: 479px) {
+  .hero--full {
+    min-height: auto;
+    padding-block: var(--space-12);
+  }
+  .hero__title {
+    font-size: clamp(1.625rem, 7vw, 2.25rem);
+    letter-spacing: -0.02em;
+  }
+  .hero__sub {
+    font-size: 0.95rem;
+    line-height: 1.5;
+  }
+  .hero__ctas {
+    flex-direction: column;
+    width: 100%;
+    gap: var(--space-3);
+  }
+  .hero__ctas .btn {
+    width: 100%;
+    justify-content: center;
+  }
+  .hero__anchor {
+    font-size: 0.8rem;
+    line-height: 1.5;
+    margin-top: var(--space-5);
+    padding-inline: var(--space-2);
+  }
+}
+
+/* ---- Season-Banner: CTA in eigene Zeile auf kleinen Screens ---- */
+@media (max-width: 479px) {
+  .season-banner {
+    padding-block: var(--space-2);
+    font-size: 0.8125rem;
+    line-height: 1.4;
+  }
+  .season-banner__inner {
+    flex-direction: column;
+    gap: var(--space-1);
+    padding-block: var(--space-1);
+  }
+  .season-banner__text {
+    text-align: center;
+  }
+  .season-banner__cta {
+    padding-block: var(--space-2);
+    min-height: 36px;
+    display: inline-flex;
+    align-items: center;
+  }
+}
+
+/* ---- Stat-Bar: kompakter und besser lesbar auf Mobile ---- */
+@media (max-width: 479px) {
+  .stat-bar {
+    padding-block: var(--space-6);
+  }
+  .stat-bar__inner {
+    gap: var(--space-4);
+  }
+  .stat-bar__num {
+    font-size: 1.75rem;
+  }
+  .stat-bar__lbl {
+    font-size: 0.75rem;
+    line-height: 1.25;
+  }
+}
+
+/* ---- Gallery-Teaser: feineres Grid + Sichtbarkeitsanpassung ---- */
+@media (max-width: 359px) {
+  .gallery-teaser {
+    grid-template-columns: 1fr;
+    gap: var(--space-3);
+  }
+}
+
+/* ---- Header: Telefon-CTA nur als Icon im mittleren Mobile-Bereich ---- */
+@media (max-width: 899px) and (min-width: 480px) {
+  .header__cta-label {
+    display: none;
+  }
+  .header__cta {
+    padding: var(--space-2) var(--space-3);
+    min-width: 44px;
+    min-height: 44px;
+    justify-content: center;
+  }
+}
+
+/* Auf SEHR kleinen Screens den Telefon-CTA ganz aus dem Header nehmen
+   (Sticky-CTA unten + Hamburger-Menu enthalten beide schon den Anruf-Button) */
+@media (max-width: 479px) {
+  .header__cta {
+    display: none;
+  }
+}
+
+/* ---- Section-Padding etwas reduzieren auf Mobile (mehr Inhalt pro Bildschirm) ---- */
+@media (max-width: 479px) {
+  .section {
+    padding-block: var(--space-8);
+  }
+  .section__header {
+    margin-block-end: var(--space-6);
+  }
+  .section__title {
+    font-size: clamp(1.5rem, 6vw, 2rem);
+  }
+  .section__lead {
+    font-size: 1rem;
+  }
+}
+
+/* ---- Cards: weniger Padding für mehr Inhalt ---- */
+@media (max-width: 479px) {
+  .card__body {
+    padding: var(--space-5);
+  }
+  .price-card {
+    padding: var(--space-5);
+  }
+}
+
+/* ---- FAQ: kompakter auf Mobile ---- */
+@media (max-width: 479px) {
+  .faq__q {
+    padding: var(--space-4);
+    font-size: 0.9375rem;
+  }
+  .faq__a {
+    padding: 0 var(--space-4) var(--space-4);
+    font-size: 0.9375rem;
+  }
+}
+
+/* ---- Body-Padding-Bottom: bessere Sticky-CTA-Anpassung ---- */
+@media (max-width: 899px) {
+  body {
+    padding-bottom: 60px;
+  }
+}
+
+/* ---- Tap-feedback Verbesserung: subtle scale auf Touch ---- */
+@media (hover: none) {
+  .btn:active,
+  .nav__link:active,
+  .card:active,
+  .gallery-teaser__item:active,
+  .price-card:active {
+    transform: scale(0.98);
+    transition: transform 100ms ease;
+  }
+}
+
+/* ---- Smooth scrollen behält Header-Höhe im Blick (für interne Anker) ---- */
+:target {
+  scroll-margin-top: calc(var(--header-height) + var(--space-4));
+}
+
+/* ---- Container-Padding feinjustiert auf sehr kleinen Screens ---- */
+@media (max-width: 359px) {
+  .container {
+    padding-inline: 0.875rem;
+  }
+}

@@ -5,6 +5,20 @@ Alle relevanten Änderungen an der Webseite werden hier dokumentiert.
 Die kundenfreundliche, nicht-technische Übersicht ist zusätzlich unter
 `public/version.json` öffentlich abrufbar.
 
+## [1.4] - 2026-05-24
+
+### Verbessert (Mobile)
+- Hero auf < 480 px: Buttons full-width, kleinere Headline, Anchor-Text kompakter
+- Saison-Banner: CTA in eigene Zeile, kleineres Padding auf Mobile
+- Statistik-Bar: kleinere Zahlen, engere Spacings auf < 480 px
+- Galerie-Teaser: 1-Spalte auf < 360 px (Smartphone-Hochformat)
+- Header: Telefon-CTA nur als Icon (480-899 px), ganz aus (< 480 px) - Platz fuer Hamburger; Anruf bleibt ueber Sticky-CTA und Menue
+- Sections, Cards, FAQ: kompakteres Padding auf Mobile (mehr Inhalt pro Bildschirm)
+- Body: padding-bottom 60 px verhindert Verdecken durch Sticky-CTA
+- Touch-Feedback: subtle scale(0.98) auf :active fuer alle interaktiven Elemente
+- Container: 14 px Padding statt 20 px auf sehr kleinen Screens
+
+
 ## [1.3] – 2026-05-24
 
 ### Hinzugefügt
