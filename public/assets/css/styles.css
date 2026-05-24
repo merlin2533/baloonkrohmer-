@@ -140,6 +140,16 @@ video {
   display: block;
 }
 
+picture {
+  display: block;
+  width: 100%;
+}
+
+picture > img {
+  width: 100%;
+  height: auto;
+}
+
 a {
   color: var(--c-sky-500);
   text-decoration: none;
