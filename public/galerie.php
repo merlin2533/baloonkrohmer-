@@ -4,12 +4,40 @@ $breadcrumbs = [
     ['name' => 'Start',   'url' => '/'],
     ['name' => 'Galerie', 'url' => '/galerie.php'],
 ];
+
+// ImageGallery JSON-LD mit allen 15 Galerie-Bildern
+$siteUrl = 'https://www.ballonsport-krohmer.de';
+$galleryImages = [];
+for ($i = 1; $i <= 15; $i++) {
+    $key = sprintf('gallery_%02d', $i);
+    $cache = _image_cache();
+    $row = $cache[$key] ?? null;
+    if ($row === null) continue;
+    $galleryImages[] = [
+        '@type'       => 'ImageObject',
+        'contentUrl'  => $siteUrl . img_url($key),
+        'name'        => $row['alt'] !== '' ? $row['alt'] : "Ballonfahrt — Bild $i",
+        'description' => $row['alt'] !== '' ? $row['alt'] : "Eindruck einer Ballonfahrt über der Schwäbischen Alb",
+        'creditText'  => 'Ballonsport Krohmer',
+        'creator'     => ['@type' => 'Organization', 'name' => 'Ballonsport Krohmer'],
+    ];
+}
+$imageGalleryJsonLd = [
+    '@context'   => 'https://schema.org',
+    '@type'      => 'ImageGallery',
+    'name'       => 'Bildergalerie — Ballonfahrten über der Schwäbischen Alb',
+    'url'        => $siteUrl . '/galerie.php',
+    'numberOfItems' => count($galleryImages),
+    'associatedMedia' => $galleryImages,
+];
+
 seo_head([
-    'title'        => t('galerie_title', 'Bildergalerie'),
-    'description'  => t('galerie_lead', 'Eindrücke aus über zwei Jahrzehnten Ballonfahren über der Schwäbischen Alb.'),
-    'canonical'    => 'https://www.ballonsport-krohmer.de/galerie.php',
-    'og_image_key' => 'gallery_01',
-    'breadcrumbs'  => $breadcrumbs,
+    'title'         => t('galerie_title', 'Bildergalerie'),
+    'description'   => t('galerie_lead', 'Eindrücke aus über zwei Jahrzehnten Ballonfahren über der Schwäbischen Alb.'),
+    'canonical'     => 'https://www.ballonsport-krohmer.de/galerie.php',
+    'og_image_key'  => 'gallery_01',
+    'breadcrumbs'   => $breadcrumbs,
+    'extra_json_ld' => [$imageGalleryJsonLd],
 ]);
 include __DIR__ . '/../src/partials/header.php';
 include __DIR__ . '/../src/partials/breadcrumbs.php';

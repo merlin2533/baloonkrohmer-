@@ -5,6 +5,32 @@ Alle relevanten Änderungen an der Webseite werden hier dokumentiert.
 Die kundenfreundliche, nicht-technische Übersicht ist zusätzlich unter
 `public/version.json` öffentlich abrufbar.
 
+## [1.3] – 2026-05-24
+
+### Hinzugefügt
+- **JSON-LD-Erweiterung** für besseres Brand-Signal in Google:
+  - `Organization` als zweiter LD-Block auf jeder Seite (Founder, vatID, ContactPoint)
+  - `WebSite` mit publisher-Reference auf Organization
+  - `ImageGallery` mit `ImageObject`-Array auf `/galerie.php` (alle 15 Bilder mit Alt-Text und Credit)
+  - `TouristAttraction` zusätzlich auf `/ballonfahren.php`
+
+### Geändert (Rechtskonformität)
+- **Impressum** auf aktuellen Rechtsstand:
+  - `§ 5 DDG` statt TMG (gilt seit 14.05.2024)
+  - `§ 18 Abs. 2 MStV` statt `§ 55 Abs. 2 RStV` (gilt seit Nov 2020)
+  - Aufsichtsbehörde Luftfahrt-Bundesamt (LBA) ergänzt
+  - Berufsbezeichnung "Heißluftballonführer" mit verleihendem Staat
+  - Haftungsausschluss für Inhalte, Links und Urheberrecht ergänzt
+- **Datenschutzerklärung** überarbeitet:
+  - Hosting-Hinweis (Auftragsverarbeitung Art. 28 DSGVO)
+  - Klarstellung: Self-Hosted Fonts, **keine Google Fonts**
+  - Eingebettete OpenStreetMap-Karte erläutert (lazy-load, IP-Übermittlung, Rechtsgrundlage)
+  - **Kein Cookie-Banner nötig** — explizit dokumentiert: keine Tracking-Cookies (§ 25 Abs. 2 TDDDG)
+  - § 25 Abs. 2 TDDDG statt veraltetem TTDSG
+  - Server-Log-Aufbewahrung präzisiert (max. 7 Tage)
+  - Widerrufsrecht (Art. 7 Abs. 3 DSGVO) und Aktualisierungsdatum ergänzt
+- Migration: `bin/v13-legal-update.php` (idempotent)
+
 ## [1.2] – 2026-05-24
 
 ### Hinzugefügt

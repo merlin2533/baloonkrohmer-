@@ -11,37 +11,52 @@ seo_head([
     'og_image_key'      => 'ballonfahren_hero',
     'preload_image_key' => 'ballonfahren_hero',
     'breadcrumbs'       => $breadcrumbs,
-    'extra_json_ld'     => [[
-        '@context'    => 'https://schema.org',
-        '@type'       => 'Service',
-        'name'        => 'Heißluftballonfahrt',
-        'serviceType' => 'Heißluftballonfahrt',
-        'provider'    => [
-            '@type' => 'LocalBusiness',
-            'name'  => 'Ballonsport Krohmer',
-            'url'   => 'https://www.ballonsport-krohmer.de/',
-        ],
-        'areaServed'  => [
-            ['@type' => 'City', 'name' => 'Reutlingen'],
-            ['@type' => 'City', 'name' => 'Tübingen'],
-            ['@type' => 'City', 'name' => 'Stuttgart'],
-            ['@type' => 'City', 'name' => 'Balingen'],
-            ['@type' => 'City', 'name' => 'Hechingen'],
-        ],
-        'offers' => [
-            '@type'         => 'Offer',
-            'price'         => '235',
-            'priceCurrency' => 'EUR',
-            'priceSpecification' => [
-                '@type'            => 'UnitPriceSpecification',
-                'price'            => '235',
-                'priceCurrency'    => 'EUR',
-                'unitText'         => 'pro Person',
+    'extra_json_ld'     => [
+        // Service-Schema
+        [
+            '@context'    => 'https://schema.org',
+            '@type'       => 'Service',
+            'name'        => 'Heißluftballonfahrt',
+            'serviceType' => 'Heißluftballonfahrt',
+            'provider'    => [
+                '@type' => 'LocalBusiness',
+                'name'  => 'Ballonsport Krohmer',
+                'url'   => 'https://www.ballonsport-krohmer.de/',
             ],
+            'areaServed'  => [
+                ['@type' => 'City', 'name' => 'Reutlingen'],
+                ['@type' => 'City', 'name' => 'Tübingen'],
+                ['@type' => 'City', 'name' => 'Stuttgart'],
+                ['@type' => 'City', 'name' => 'Balingen'],
+                ['@type' => 'City', 'name' => 'Hechingen'],
+            ],
+            'offers' => [
+                '@type'         => 'Offer',
+                'price'         => '235',
+                'priceCurrency' => 'EUR',
+                'priceSpecification' => [
+                    '@type'            => 'UnitPriceSpecification',
+                    'price'            => '235',
+                    'priceCurrency'    => 'EUR',
+                    'unitText'         => 'pro Person',
+                ],
+            ],
+            'description' => 'Erleben Sie die Schwäbische Alb aus der Vogelperspektive — ca. 1,5 Stunden Flugzeit, Champagner-Taufe nach der Landung. Startorte: Reutlingen, Tübingen, Stuttgart.',
+            'url'         => 'https://www.ballonsport-krohmer.de/ballonfahren.php',
         ],
-        'description' => 'Erleben Sie die Schwäbische Alb aus der Vogelperspektive — ca. 1,5 Stunden Flugzeit, Champagner-Taufe nach der Landung. Startorte: Reutlingen, Tübingen, Stuttgart.',
-        'url'         => 'https://www.ballonsport-krohmer.de/ballonfahren.php',
-    ]],
+        // TouristAttraction für die Erlebnis-Region
+        [
+            '@context'    => 'https://schema.org',
+            '@type'       => 'TouristAttraction',
+            'name'        => 'Heißluftballonfahrt über die Schwäbische Alb',
+            'description' => 'Lautlose Fahrt über die Schwäbische Alb mit Blick auf Burg Hohenzollern, Schloss Lichtenstein, Reutlinger Alb-Trauf und an klaren Tagen bis zu den Alpen.',
+            'image'       => 'https://www.ballonsport-krohmer.de' . img_url('ballonfahren_hero'),
+            'touristType' => ['Adventure tourists', 'Romantic couples', 'Family travelers', 'Senior travelers'],
+            'isAccessibleForFree' => false,
+            'publicAccess' => false,
+            'availableLanguage' => 'de',
+        ],
+    ],
 ]);
 include __DIR__ . '/../src/partials/header.php';
 include __DIR__ . '/../src/partials/breadcrumbs.php';

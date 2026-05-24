@@ -91,6 +91,51 @@ function seo_head(array $args = []): void
 
     $robotsContent = $noindex ? 'noindex,nofollow' : 'index,follow';
 
+    // Organization JSON-LD (Brand-Signal für Google Knowledge Panel)
+    $organizationJsonLd = [
+        '@context'    => 'https://schema.org',
+        '@type'       => 'Organization',
+        '@id'         => $siteUrl . '/#organization',
+        'name'        => 'Ballonsport Krohmer',
+        'legalName'   => 'Günter Krohmer — Ballonsport Krohmer',
+        'foundingDate' => '1998',
+        'founder'     => [
+            '@type' => 'Person',
+            'name'  => 'Günter Krohmer',
+        ],
+        'url'         => $siteUrl . '/',
+        'logo'        => $siteUrl . img_url('logo'),
+        'telephone'   => $phone,
+        'email'       => $email,
+        'address'     => [
+            '@type'           => 'PostalAddress',
+            'streetAddress'   => 'Carl-Zeiss-Straße 3',
+            'addressLocality' => 'Pliezhausen',
+            'postalCode'      => '72124',
+            'addressCountry'  => 'DE',
+        ],
+        'vatID'       => 'DE201806158',
+        'contactPoint' => [
+            '@type'             => 'ContactPoint',
+            'telephone'         => $phone,
+            'contactType'       => 'customer service',
+            'availableLanguage' => ['German'],
+            'areaServed'        => 'DE',
+        ],
+    ];
+
+    // WebSite JSON-LD
+    $websiteJsonLd = [
+        '@context'      => 'https://schema.org',
+        '@type'         => 'WebSite',
+        '@id'           => $siteUrl . '/#website',
+        'url'           => $siteUrl . '/',
+        'name'          => 'Ballonsport Krohmer',
+        'alternateName' => 'Heißluftballonfahrten Schwäbische Alb',
+        'inLanguage'    => 'de-DE',
+        'publisher'     => ['@id' => $siteUrl . '/#organization'],
+    ];
+
     // BreadcrumbList JSON-LD
     $breadcrumbJsonLd = null;
     if (!empty($breadcrumbs)) {
@@ -188,6 +233,16 @@ function seo_head(array $args = []): void
     <!-- JSON-LD Structured Data — LocalBusiness -->
     <script type="application/ld+json">
 <?= json_encode($jsonLd, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES | JSON_PRETTY_PRINT) ?>
+    </script>
+
+    <!-- JSON-LD Structured Data — Organization (Brand-Signal) -->
+    <script type="application/ld+json">
+<?= json_encode($organizationJsonLd, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES | JSON_PRETTY_PRINT) ?>
+    </script>
+
+    <!-- JSON-LD Structured Data — WebSite -->
+    <script type="application/ld+json">
+<?= json_encode($websiteJsonLd, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES | JSON_PRETTY_PRINT) ?>
     </script>
 
 <?php if ($breadcrumbJsonLd !== null): ?>

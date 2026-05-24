@@ -1,73 +1,81 @@
 {
-  "generated_at": "2026-05-24T20:00:00+00:00",
-  "version": "1.2",
-  "updates": [
-    {
-      "date": "2026-05-24",
-      "title": "Neue Homepage-Elemente und frische Texte"
-,
-      "description": "Saisonaler Hinweis-Banner, Erfahrungs-Kennzahlen, Galerie-Vorschau und überarbeitete Texte machen die Startseite noch überzeugender."
-    },
-    {
-      "date": "2026-05-24",
-      "title": "Regionalseiten für Stuttgart, Reutlingen und Tübingen"
-,
-      "description": "Eigene Übersichtsseiten für die Hauptregionen — leichter zu finden für Interessierte aus diesen Städten und besser bei Google sichtbar."
-    },
-    {
-      "date": "2026-05-24",
-      "title": "Mehr Antworten auf häufige Fragen",
-      "description": "Die FAQ wurden von 12 auf 20 Fragen erweitert — z.B. zu Wunschstartorten, Gutschein-Gültigkeit, Fotos während der Fahrt und Senioren."
-    },
-    {
-      "date": "2026-05-24",
-      "title": "Mehr Inhalte rund um Ihre Ballonfahrt",
-      "description": "Ausführliche Beschreibungen zum Ablauf, zu unseren Ballonen, zur Aussicht und zu den enthaltenen Leistungen helfen bei der Entscheidung."
-    },
-    {
-      "date": "2026-05-24",
-      "title": "Bessere Sichtbarkeit bei Google",
-      "description": "Suchmaschinen verstehen jetzt deutlich besser, was die Seite anbietet — durch erweiterte strukturierte Daten, Brotkrumen-Navigation und passgenaue Inhalte zu den richtigen Suchanfragen."
-    },
-    {
-      "date": "2026-05-24",
-      "title": "Bilder werden wieder korrekt angezeigt",
-      "description": "Ein kleiner Darstellungsfehler in der Bildanzeige wurde behoben."
-    },
-    {
-      "date": "2026-05-23",
-      "title": "Bedienung auf Smartphones verbessert",
-      "description": "Das Layout, die Menüführung und die Buttons wurden für die Nutzung auf Mobilgeräten weiter optimiert."
-    },
-    {
-      "date": "2026-05-23",
-      "title": "Schnellere Ladezeiten und schärfere Bilder",
-      "description": "Bilder werden jetzt in der passenden Größe für jedes Endgerät ausgeliefert und Schriften laden zügiger – die Seite fühlt sich spürbar flotter an."
-    },
-    {
-      "date": "2026-05-23",
-      "title": "Originalbilder von Ballonsport Krohmer eingebunden",
-      "description": "Alle Fotos der Original-Webseite – darunter Ballonaufnahmen und Galeriebilder – wurden in den neuen Auftritt übernommen."
-    },
-    {
-      "date": "2026-05-23",
-      "title": "Performance-Optimierungen",
-      "description": "Seitenaufrufe sind jetzt deutlich schneller, sowohl beim ersten Besuch als auch bei wiederholten Aufrufen."
-    },
-    {
-      "date": "2026-05-23",
-      "title": "Bessere Auffindbarkeit bei Google",
-      "description": "Suchmaschinen-Optimierung wurde überarbeitet und eine freundliche Fehlerseite für nicht gefundene Inhalte ergänzt."
-    },
-    {
-      "date": "2026-05-23",
-      "title": "Alle Webseiten und Verwaltungsbereich eingerichtet",
-      "description": "Sämtliche öffentlichen Seiten sind online und ein passwortgeschützter Bereich zum Bearbeiten von Texten und Bildern steht bereit."
-    },
-    {
-      "date": "2026-05-23",
-      "title": "Relaunch der Webseite gestartet",
-      "description": "Die Grundlage für den frischen Webauftritt von Ballonsport Krohmer wurde gelegt."
-    }
-  ]
+    "generated_at": "2026-05-24T11:58:56+00:00",
+    "version": "1.3",
+    "updates": [
+        {
+            "date": "2026-05-24",
+            "title": "Rechtlich auf neuesten Stand gebracht",
+            "description": "Impressum und Datenschutzerklärung wurden an die aktuellen Gesetze angepasst (DDG, MStV, DSGVO, TDDDG). Zusätzlich Hinweis auf die eingebettete Karte und auf den Verzicht auf Tracking-Cookies."
+        },
+        {
+            "date": "2026-05-24",
+            "title": "Bessere Sichtbarkeit bei Google durch erweiterte Markierungen",
+            "description": "Suchmaschinen erkennen jetzt zusätzlich Marke, Webseite, Bildergalerie und das Erlebnis selbst als strukturierte Inhalte — das hilft bei Rich Snippets und im Knowledge Panel."
+        },
+        {
+            "date": "2026-05-24",
+            "title": "Neue Homepage-Elemente und frische Texte",
+            "description": "Saisonaler Hinweis-Banner, Erfahrungs-Kennzahlen, Galerie-Vorschau und überarbeitete Texte machen die Startseite noch überzeugender."
+        },
+        {
+            "date": "2026-05-24",
+            "title": "Regionalseiten für Stuttgart, Reutlingen und Tübingen",
+            "description": "Eigene Übersichtsseiten für die Hauptregionen — leichter zu finden für Interessierte aus diesen Städten und besser bei Google sichtbar."
+        },
+        {
+            "date": "2026-05-24",
+            "title": "Mehr Antworten auf häufige Fragen",
+            "description": "Die FAQ wurden von 12 auf 20 Fragen erweitert — z.B. zu Wunschstartorten, Gutschein-Gültigkeit, Fotos während der Fahrt und Senioren."
+        },
+        {
+            "date": "2026-05-24",
+            "title": "Mehr Inhalte rund um Ihre Ballonfahrt",
+            "description": "Ausführliche Beschreibungen zum Ablauf, zu unseren Ballonen, zur Aussicht und zu den enthaltenen Leistungen helfen bei der Entscheidung."
+        },
+        {
+            "date": "2026-05-24",
+            "title": "Bessere Sichtbarkeit bei Google",
+            "description": "Suchmaschinen verstehen jetzt deutlich besser, was die Seite anbietet — durch erweiterte strukturierte Daten, Brotkrumen-Navigation und passgenaue Inhalte zu den richtigen Suchanfragen."
+        },
+        {
+            "date": "2026-05-24",
+            "title": "Bilder werden wieder korrekt angezeigt",
+            "description": "Ein kleiner Darstellungsfehler in der Bildanzeige wurde behoben."
+        },
+        {
+            "date": "2026-05-23",
+            "title": "Bedienung auf Smartphones verbessert",
+            "description": "Das Layout, die Menüführung und die Buttons wurden für die Nutzung auf Mobilgeräten weiter optimiert."
+        },
+        {
+            "date": "2026-05-23",
+            "title": "Schnellere Ladezeiten und schärfere Bilder",
+            "description": "Bilder werden jetzt in der passenden Größe für jedes Endgerät ausgeliefert und Schriften laden zügiger – die Seite fühlt sich spürbar flotter an."
+        },
+        {
+            "date": "2026-05-23",
+            "title": "Originalbilder von Ballonsport Krohmer eingebunden",
+            "description": "Alle Fotos der Original-Webseite – darunter Ballonaufnahmen und Galeriebilder – wurden in den neuen Auftritt übernommen."
+        },
+        {
+            "date": "2026-05-23",
+            "title": "Performance-Optimierungen",
+            "description": "Seitenaufrufe sind jetzt deutlich schneller, sowohl beim ersten Besuch als auch bei wiederholten Aufrufen."
+        },
+        {
+            "date": "2026-05-23",
+            "title": "Bessere Auffindbarkeit bei Google",
+            "description": "Suchmaschinen-Optimierung wurde überarbeitet und eine freundliche Fehlerseite für nicht gefundene Inhalte ergänzt."
+        },
+        {
+            "date": "2026-05-23",
+            "title": "Alle Webseiten und Verwaltungsbereich eingerichtet",
+            "description": "Sämtliche öffentlichen Seiten sind online und ein passwortgeschützter Bereich zum Bearbeiten von Texten und Bildern steht bereit."
+        },
+        {
+            "date": "2026-05-23",
+            "title": "Relaunch der Webseite gestartet",
+            "description": "Die Grundlage für den frischen Webauftritt von Ballonsport Krohmer wurde gelegt."
+        }
+    ]
 }
