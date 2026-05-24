@@ -1,0 +1,41 @@
+{
+  "generated_at": "2026-05-24T08:40:00+00:00",
+  "version": "1.0",
+  "updates": [
+    {
+      "date": "2026-05-23",
+      "title": "Bedienung auf Smartphones verbessert",
+      "description": "Das Layout, die Menüführung und die Buttons wurden für die Nutzung auf Mobilgeräten weiter optimiert."
+    },
+    {
+      "date": "2026-05-23",
+      "title": "Schnellere Ladezeiten und schärfere Bilder",
+      "description": "Bilder werden jetzt in der passenden Größe für jedes Endgerät ausgeliefert und Schriften laden zügiger – die Seite fühlt sich spürbar flotter an."
+    },
+    {
+      "date": "2026-05-23",
+      "title": "Originalbilder von Ballonsport Krohmer eingebunden",
+      "description": "Alle Fotos der Original-Webseite – darunter Ballonaufnahmen und Galeriebilder – wurden in den neuen Auftritt übernommen."
+    },
+    {
+      "date": "2026-05-23",
+      "title": "Performance-Optimierungen",
+      "description": "Seitenaufrufe sind jetzt deutlich schneller, sowohl beim ersten Besuch als auch bei wiederholten Aufrufen."
+    },
+    {
+      "date": "2026-05-23",
+      "title": "Bessere Auffindbarkeit bei Google",
+      "description": "Suchmaschinen-Optimierung wurde überarbeitet und eine freundliche Fehlerseite für nicht gefundene Inhalte ergänzt."
+    },
+    {
+      "date": "2026-05-23",
+      "title": "Alle Webseiten und Verwaltungsbereich eingerichtet",
+      "description": "Sämtliche öffentlichen Seiten sind online und ein passwortgeschützter Bereich zum Bearbeiten von Texten und Bildern steht bereit."
+    },
+    {
+      "date": "2026-05-23",
+      "title": "Relaunch der Webseite gestartet",
+      "description": "Die Grundlage für den frischen Webauftritt von Ballonsport Krohmer wurde gelegt."
+    }
+  ]
+}
